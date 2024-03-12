@@ -1,2 +1,0 @@
-/usr/lib/gap_riscv_toolchain/bin/riscv32-unknown-elf-ar qc libbsp.a CMakeFiles/bsp.dir/bsp/bsp.c.obj CMakeFiles/bsp.dir/bsp/boards/bsp_gap9mod_v1_0_b.c.obj CMakeFiles/bsp.dir/bsp/boards/bsp_gap9evk_v1_3.c.obj CMakeFiles/bsp.dir/bsp/powersupply/powersupply.c.obj CMakeFiles/bsp.dir/bsp/powersupply/powersupplygpio.c.obj
-/usr/lib/gap_riscv_toolchain/bin/riscv32-unknown-elf-ranlib libbsp.a
