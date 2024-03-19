@@ -39,7 +39,7 @@ void matMul(float32_t *A, float32_t *B, float32_t *C, int M, int K, int N)
             {
                 sum += A[i * K + k] * B[k * N + j];
             }
-            C[i * N + j] = sum;
+            C[i * N + j] = sum*-2;
         }
     }
 }
