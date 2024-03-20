@@ -11,14 +11,14 @@
 /* Variables used. */
 typedef float float32_t;
 
-#define N_ROW 10 // row size
-#define N_COL 20 // column size
+#define N_ROW 2 // row size
+#define N_COL 2 // column size
 
 
 
 /* Matrix Multiplication with pointers*/
 // C = A*B where A is MxK, B is KxN, C is MxN
-void matMul(float32_t *A, float32_t *B, float32_t *C, int M, int K, int N)
+void matMul(float32_t *A, float32_t *B, float32_t *C, int rowSizeA, int colSizeA, int colSizeB)
 {
     /*
         M is rowSize of A
@@ -26,24 +26,23 @@ void matMul(float32_t *A, float32_t *B, float32_t *C, int M, int K, int N)
         N is colSize of B
     */
     int i = 0; // index of row in A
-    int j = 0; // index of col in A
-    int k = 0; // index of col in B
+    int j = 0; // index of col in B
+    int k = 0; // index of col in A
 
     float32_t sum;
-    for (i = 0; i < M; i++)
-    {
-        for (j = 0; j < K; j++)
+    for (i = 0; i < rowSizeA; i++) // row of A
+    {   
+        for (j = 0; j < colSizeB; j++) // col of B
         {
             sum = 0;
-            for (k = 0; k < N; k++)
+            for (k = 0; k < colSizeA; k++) // col of A
             {
-                sum += A[i * K + k] * B[k * N + j];
+                sum += A[i * colSizeA + k] * B[k * colSizeB + j];
             }
-            C[i * N + j] = sum*-2;
+            C[i * colSizeB + j] = sum * -2;
         }
     }
 }
-
 
 void vector_sum(float32_t *src, float dst[N_ROW],int rowSize, int colSize)
 {
