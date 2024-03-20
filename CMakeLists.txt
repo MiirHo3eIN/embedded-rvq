@@ -31,7 +31,7 @@ cmake_minimum_required(VERSION 3.19)
 # Panel Control
 ###############################################################################
 set(TARGET_NAME "vq_block")
-set(TARGET_SRCS vq_block.c)
+set(TARGET_SRCS vq_block.c )
 
 ###############################################################################
 # CMake pre initialization
