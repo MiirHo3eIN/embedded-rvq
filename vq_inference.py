@@ -32,8 +32,8 @@ __doc__ = r"""
     """
 
 
-N_ROW = 2
-N_COL = 2
+N_ROW = 10
+N_COL = 20
 
 
 def distance_euclidean(x, embeds):

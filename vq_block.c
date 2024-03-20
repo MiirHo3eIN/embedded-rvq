@@ -11,8 +11,8 @@
 /* Variables used. */
 typedef float float32_t;
 
-#define N_ROW 2 // row size
-#define N_COL 2 // column size
+#define N_ROW 10 // row size
+#define N_COL 20 // column size
 
 
 
