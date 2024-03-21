@@ -10,11 +10,16 @@
 
 /* Variables used. */
 typedef float float32_t;
-typedef enum {SET, RESET} bool;
+typedef enum {ON, OFF} bool;
 
 #define N_ROW 10 // row size
 #define N_COL 20 // column size
 
+#define N_ROW_A 10
+#define N_COL_A 20
+
+#define N_ROW_B 20
+#define N_COL_B 15
 
 
 /* Matrix Multiplication with pointers*/
@@ -45,7 +50,7 @@ void matMul(float32_t *A, float32_t *B, float32_t *C, int rowSizeA, int colSizeA
     }
 }
 
-void vector_sum(float32_t *src, float dst[N_ROW],int rowSize, int colSize)
+void vector_sum(float32_t *Src, float32_t *Dst,int rowSize, int colSize)
 {
 
     /* Sum the elements of each row */
@@ -54,10 +59,10 @@ void vector_sum(float32_t *src, float dst[N_ROW],int rowSize, int colSize)
         for (int j = 0; j < colSize; j++)
         {
            
-            dst[i] += (src[i*colSize + j]*src[i*colSize + j] );
+            Dst[i] += (Src[i*colSize + j]*Src[i*colSize + j] );
         }
 
-        printf("Sum of %d row is %f\n", i, dst[i]);
+        printf("Sum of %d row is %f\n", i, Dst[i]);
     }
 }
 
@@ -145,9 +150,9 @@ void VectorAddTest()
     B = (float32_t *) malloc(N_COL * sizeof(float32_t));
     C = (float32_t *) malloc(N_ROW * N_COL *sizeof(float32_t));
 
-    VectorInit(A, N_ROW, 10, SET);
-    VectorInit(B, N_COL, 5, SET);
-    VectorInit(C, N_ROW*N_COL, 0, RESET);
+    VectorInit(A, N_ROW, 10, ON);
+    VectorInit(B, N_COL, 5, ON);
+    VectorInit(C, N_ROW*N_COL, 0, OFF);
     VectorToMatrixAdd(A, B, C, N_ROW, N_COL);
 
     VectorPrint(A, "A", N_ROW);
@@ -155,6 +160,53 @@ void VectorAddTest()
     VectorPrint(C, "C", N_ROW*N_COL);
 
 }
+
+
+void cdist(float32_t *SrcA, float32_t *SrcB, float32_t *Dst, int rowSizeSrcA, int colSizeSrcA, int colSizeSrcB)
+{
+    
+    float xTemp[rowSizeSrcA];
+    float yTemp[colSizeSrcA];
+    float32_t *sumResult; 
+
+    sumResult = (float32_t *) malloc(rowSizeSrcA * colSizeSrcB * sizeof(float32_t));
+    /* Matrix Multiplications */
+    matMul(SrcA, SrcB, Dst, rowSizeSrcA, colSizeSrcA, colSizeSrcB);
+    matrix_print(Dst, "Result", rowSizeSrcA, colSizeSrcB);
+    /* Sum the elements of each row */
+    vector_sum(SrcA, xTemp, rowSizeSrcA, colSizeSrcB);
+    vector_sum(SrcB, yTemp, colSizeSrcA, colSizeSrcB);
+
+    VectorPrint(xTemp, "xTemp", rowSizeSrcA);
+    VectorPrint(yTemp, "yTemp", colSizeSrcA);
+    /* Add x and y*/
+    VectorToMatrixAdd(xTemp, yTemp, sumResult, rowSizeSrcA, colSizeSrcA);
+
+    /* Add the result of matrix multiplication and sum of x and y */
+
+}
+
+
+
+void cdist_test()
+{
+    float32_t *A;
+    float32_t *B;
+    float32_t *C; 
+    A = (float32_t *) malloc(N_COL*N_ROW * sizeof(float32_t));
+    B = (float32_t *) malloc(N_COL*N_ROW * sizeof(float32_t));
+    C = (float32_t *) malloc(N_ROW * N_ROW * sizeof(float32_t));
+
+    
+    // Initialize the matrices
+    MatrixInit(A, N_ROW, N_COL);
+    MatrixInit(B, N_COL, N_ROW);
+    MatrixInit(C, N_ROW, N_ROW);
+
+    // Print the matrices
+    cdist(A, B, C, N_ROW, N_COL, N_ROW);
+}
+
 
 /* Program Entry. */
 int main(void)
@@ -165,7 +217,7 @@ int main(void)
     uint32_t errors = 0;
     
 
-    VectorAddTest();
+    // VectorAddTest();
     // float32_t *A;
     // float32_t *B;
     // float32_t *C; 
