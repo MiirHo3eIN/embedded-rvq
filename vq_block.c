@@ -10,6 +10,7 @@
 
 /* Variables used. */
 typedef float float32_t;
+typedef enum {SET, RESET} bool;
 
 #define N_ROW 10 // row size
 #define N_COL 20 // column size
@@ -99,18 +100,27 @@ void VectorToMatrixAdd(float32_t *pSrcA, float32_t* pSrcB, float32_t *pDst, int 
     {
         for (j = 0; j < rowSizeSrcB; j++)
         {
-            pDst[i + j] = pSrcA[i] + pSrcB[j];
+            pDst[i*rowSizeSrcB + j] = pSrcA[i] + pSrcB[j];
         }
     }
 }
 
 
-void VectorInit(float32_t *pSrc, int rowSize, float value)
+void VectorInit(float32_t *pSrc, int rowSize, float32_t value, bool is_incremental)
 {
-    int i;
-    for (i = 0; i < rowSize; i++)
+    int i; 
+
+    if (is_incremental == SET)
     {
-        pSrc[i] = i *value;
+        for (i = 0; i < rowSize; i++)
+        {
+            pSrc[i] = (i+1);
+        }
+    }
+    else
+        for (i = 0; i < rowSize; i++)
+    {
+        pSrc[i] = 1 * value;
     }
 }
 
@@ -135,11 +145,13 @@ void VectorAddTest()
     B = (float32_t *) malloc(N_COL * sizeof(float32_t));
     C = (float32_t *) malloc(N_ROW * N_COL *sizeof(float32_t));
 
-    VectorInit(A, N_ROW, 10);
-    VectorInit(B, N_COL, 5);
-
+    VectorInit(A, N_ROW, 10, SET);
+    VectorInit(B, N_COL, 5, SET);
+    VectorInit(C, N_ROW*N_COL, 0, RESET);
     VectorToMatrixAdd(A, B, C, N_ROW, N_COL);
 
+    VectorPrint(A, "A", N_ROW);
+    VectorPrint(B, "B", N_COL);
     VectorPrint(C, "C", N_ROW*N_COL);
 
 }
