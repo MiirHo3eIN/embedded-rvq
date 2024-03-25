@@ -63,12 +63,6 @@ void VectorAddTest()
 }
 
 
-
-
-
-
-
-
 void MatrixAddTest()
 {
     float32_t *A;
