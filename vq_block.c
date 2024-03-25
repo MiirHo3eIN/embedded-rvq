@@ -22,6 +22,13 @@
 #define N_ROW_B 20
 #define N_COL_B 10
 
+inline float Sqrt(float x) {
+        float res;
+        asm("fsqrt.s %0, %1":"=f"(res):"f"(x));
+        return res;
+}
+
+
 void MatrixTranspose(float32_t *Src, float32_t *Dst, int rowSize, int colSize)
 {
     for (int i = 0; i < rowSize; i++)
@@ -70,60 +77,9 @@ void VectorAddTest()
     VectorPrint(C, "C", N_ROW*N_COL);
 
 }
-void MatrixAdd(float32_t *SrcA, float32_t *SrcB, float32_t *Dst, int rowSize, int colSize)
-{
-    for (int i = 0; i < rowSize; i++)
-    {
-        for (int j = 0; j < colSize; j++)
-        {
-            Dst[i * colSize + j] = SrcA[i * colSize + j] + SrcB[i * colSize + j];
-        }
-    }
-}
 
 
-void cdist(float32_t *SrcA, float32_t *SrcB, float32_t *Dst, int rowSizeSrc, int colSizeSrc)
-{
-    
-    float32_t *xTemp;
-    float32_t *yTemp;
-    float32_t *SrcBTransposed;
-    float32_t *sumResult; 
 
-    sumResult = (float32_t *) malloc(rowSizeSrc * rowSizeSrc * sizeof(float32_t));
-    SrcBTransposed = (float32_t *) malloc(rowSizeSrc * colSizeSrc * sizeof(float32_t));
-    xTemp = (float32_t *) malloc(rowSizeSrc * sizeof(float32_t));  
-    yTemp = (float32_t *) malloc(rowSizeSrc * sizeof(float32_t)); // colSizeSrcA must be same as the rowSizeSrcB
-
-    /* Initialize xtemp and ytemp */
-    VectorInit(xTemp, rowSizeSrc, 0, OFF);
-    VectorInit(yTemp, rowSizeSrc, 0, OFF);
-
-    /* Print The two Input Matrices */
-    MatrixPrint(SrcA, "SrcA", rowSizeSrc, colSizeSrc);
-    MatrixPrint(SrcB, "SrcB", rowSizeSrc, colSizeSrc);
-
-    /* Embed Transpose */
-    
-    MatrixTranspose(SrcB, SrcBTransposed, rowSizeSrc, colSizeSrc); /* y = transpose(B) */
-    MatrixPrint(SrcBTransposed, "SrcBTransposed", colSizeSrc, rowSizeSrc);
-    /* Matrix Multiplications */
-    matMul(SrcA, SrcBTransposed, Dst, rowSizeSrc, colSizeSrc, rowSizeSrc); /* -2xy */
-    MatrixPrint(Dst, "MatMul Result", rowSizeSrc, rowSizeSrc);
-    /* Sum the elements of each row */
-    MatToVectorSum(SrcA, xTemp, rowSizeSrc, colSizeSrc); /* reduce(x, 'i d -> i', sum) */
-    MatToVectorSum(SrcB, yTemp, rowSizeSrc, colSizeSrc); /* reduce(y, 'i d -> i', sum) */
-
-    VectorPrint(xTemp, "xTemp", rowSizeSrc);
-    VectorPrint(yTemp, "yTemp", rowSizeSrc);
-    /* Add x and y*/
-    VectorToMatrixAdd(xTemp, yTemp, sumResult, rowSizeSrc, rowSizeSrc); /* x + y */
-    MatrixPrint(sumResult, "SumResult", rowSizeSrc, rowSizeSrc);    
-    /* Add the result of matrix multiplication and sum of x and y */
-    MatrixAdd(Dst, sumResult, Dst, rowSizeSrc, rowSizeSrc); /* -2xy + x + y */
-    MatrixPrint(Dst, "Result", rowSizeSrc, rowSizeSrc); /* -2xy + x + y */
-
-}
 
 
 

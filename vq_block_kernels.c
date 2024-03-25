@@ -42,8 +42,13 @@ void matMul(float32_t *A, float32_t *B, float32_t *C, int rowSizeA, int colSizeA
 }
 
 
+
+void MatToVectorSum(float32_t *Src, float32_t *Dst,int rowSize, int colSize)
+{   
 /* 
     @brief: Perform Summation in the column dimension of the Input Matric
+    @python_high_level: einops.reduce(Src, 'i d -> i', sum)
+    @python_low_level: torch.sum(Src, axis=1) 
     @author: @MiirHo3eIN
     @param: float32_t *Src: Pointer to the Input Matrix
     @param: float32_t *Dst: Pointer to the Output Vector
@@ -51,8 +56,6 @@ void matMul(float32_t *A, float32_t *B, float32_t *C, int rowSizeA, int colSizeA
     @param: int colSize: Number of columns in the Input Matrix
 
 */
-void MatToVectorSum(float32_t *Src, float32_t *Dst,int rowSize, int colSize)
-{
 
     /* Sum the elements of each row */
     for (int i = 0; i < rowSize; i++)
@@ -70,6 +73,20 @@ void MatToVectorSum(float32_t *Src, float32_t *Dst,int rowSize, int colSize)
 
 void VectorToMatrixAdd(float32_t *pSrcA, float32_t* pSrcB, float32_t *pDst, int rowSizeSrcA, int rowSizeSrcB)
 {
+
+/* 
+    @brief: Perform Addition of two vectors and store the result in a matrix
+    @author: @MiirHo3eIN
+    @date: 2024-03-25
+    @python: einops.rearrange(Src, 'i -> i 1') + einops.rearrange(Src, 'j -> 1 j')
+    
+    @param: float32_t *pSrcA: Pointer to the first Input Vector
+    @param: float32_t *pSrcB: Pointer to the second Input Vector
+    @param: float32_t *pDst: Pointer to the Output Matrix
+    @param: int rowSizeSrcA: Number of rows in the first Input Vector
+    @param: int rowSizeSrcB: Number of rows in the second Input Vector
+*/
+
     int i;
     int j;
     
@@ -80,4 +97,91 @@ void VectorToMatrixAdd(float32_t *pSrcA, float32_t* pSrcB, float32_t *pDst, int 
             pDst[i*rowSizeSrcA + j] = pSrcA[i] + pSrcB[j];
         }
     }
+}
+
+void MatrixAdd(float32_t *SrcA, float32_t *SrcB, float32_t *Dst, int rowSize, int colSize)
+{
+
+/* 
+    @brief: Perform Addition of two matrices and store the result in a matrix. 
+    @note: The two matrices must have the same dimensions [A1, A2] + [B1, B2] = [A1, A2] = [B1, B2]
+    @author: @MiirHo3eIN
+    @date: 2024-03-25
+    @python: SrcA + SrcB
+
+    @param: float32_t *SrcA: Pointer to the first Input Matrix
+    @param: float32_t *SrcB: Pointer to the second Input Matrix
+    @param: float32_t *Dst: Pointer to the Output Matrix
+    @param: int rowSize: Number of rows in the Input Matrix
+    @param: int colSize: Number of columns in the Input Matrix
+
+*/
+    for (int i = 0; i < rowSize; i++)
+    {
+        for (int j = 0; j < colSize; j++)
+        {
+            Dst[i * colSize + j] = Sqrt(SrcA[i * colSize + j] + SrcB[i * colSize + j]);
+        }
+    }
+}
+
+
+
+void cdist(float32_t *SrcA, float32_t *SrcB, float32_t *Dst, int rowSizeSrc, int colSizeSrc)
+{
+
+    /*
+        @brief: Compute the Euclidean distance between two matrices.
+        @note: The two matrices must have the same dimensions [A1, A2] + [B1, B2] = [A1, A2] = [B1, B2]
+        @note: We compute A.B^T and then sum the elements of each row of A and B.
+        @note: Having the same dimensions is crucial for the matrix addition operations followed by the matrix multiplication. 
+        @note: The Euclidean distance is computed as follows: sqrt(-2xy + x + y)
+
+        @author: @MiirHo3eIN
+        @date: 2024-03-25
+        @python: look at <vq_inference.py scripts for the two implementations of this function>
+        @param: float32_t *SrcA: Pointer to the first Input Matrix
+        @param: float32_t *SrcB: Pointer to the second Input Matrix
+        @param: float32_t *Dst: Pointer to the Output Matrix
+        @param: int rowSizeSrc: Number of rows in the Input Matrix
+        @param: int colSizeSrc: Number of columns in the Input Matrix
+    
+    */
+    
+    float32_t *xTemp;
+    float32_t *yTemp;
+    float32_t *SrcBTransposed;
+    float32_t *sumResult; 
+
+
+    sumResult = (float32_t *) malloc(rowSizeSrc * rowSizeSrc * sizeof(float32_t));
+    SrcBTransposed = (float32_t *) malloc(rowSizeSrc * colSizeSrc * sizeof(float32_t));
+    xTemp = (float32_t *) malloc(rowSizeSrc * sizeof(float32_t));  
+    yTemp = (float32_t *) malloc(rowSizeSrc * sizeof(float32_t)); // colSizeSrcA must be same as the rowSizeSrcB
+
+    /* Initialize xtemp and ytemp */
+    VectorInit(xTemp, rowSizeSrc, 0, OFF);
+    VectorInit(yTemp, rowSizeSrc, 0, OFF);
+    /* Print The two Input Matrices */
+    MatrixPrint(SrcA, "SrcA", rowSizeSrc, colSizeSrc);
+    MatrixPrint(SrcB, "SrcB", rowSizeSrc, colSizeSrc);
+    /* Embed Transpose */
+    MatrixTranspose(SrcB, SrcBTransposed, rowSizeSrc, colSizeSrc); /* y = transpose(B) */
+    MatrixPrint(SrcBTransposed, "SrcBTransposed", colSizeSrc, rowSizeSrc);
+    /* Matrix Multiplications */
+    matMul(SrcA, SrcBTransposed, Dst, rowSizeSrc, colSizeSrc, rowSizeSrc); /* -2xy */
+    MatrixPrint(Dst, "MatMul Result", rowSizeSrc, rowSizeSrc);
+    /* Sum the elements of each row */
+    MatToVectorSum(SrcA, xTemp, rowSizeSrc, colSizeSrc); /* reduce(x, 'i d -> i', sum) */
+    MatToVectorSum(SrcB, yTemp, rowSizeSrc, colSizeSrc); /* reduce(y, 'i d -> i', sum) */
+
+    VectorPrint(xTemp, "xTemp", rowSizeSrc);
+    VectorPrint(yTemp, "yTemp", rowSizeSrc);
+    /* Add x and y*/
+    VectorToMatrixAdd(xTemp, yTemp, sumResult, rowSizeSrc, rowSizeSrc); /* x + y */
+    MatrixPrint(sumResult, "SumResult", rowSizeSrc, rowSizeSrc);    
+    /* Add the result of matrix multiplication and sum of x and y */
+    MatrixAdd(Dst, sumResult, Dst, rowSizeSrc, rowSizeSrc); /* -2xy + x + y */
+    MatrixPrint(Dst, "Result", rowSizeSrc, rowSizeSrc); /* -2xy + x + y */
+
 }
