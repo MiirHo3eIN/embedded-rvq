@@ -14,15 +14,40 @@
 
 
 #define N_ROW 10 // row size
-#define N_COL 20 // column size
+#define N_COL 2 // column size
 
 #define N_ROW_A 10
 #define N_COL_A 20
 
 #define N_ROW_B 20
-#define N_COL_B 15
+#define N_COL_B 10
+
+void MatrixTranspose(float32_t *Src, float32_t *Dst, int rowSize, int colSize)
+{
+    for (int i = 0; i < rowSize; i++)
+    {
+        for (int j = 0; j < colSize; j++)
+        {
+            Dst[j * rowSize + i] = Src[i * colSize + j];
+        }
+    }
+}
 
 
+void MatrixTransposeTest() 
+{
+    float32_t *A;
+    float32_t *B;
+    A = (float32_t *) malloc(N_ROW * N_COL * sizeof(float32_t));
+    B = (float32_t *) malloc(N_ROW * N_COL * sizeof(float32_t));
+
+    MatrixInit(A, N_ROW, N_COL);
+    MatrixInit(B, N_COL, N_ROW);
+
+    MatrixPrint(A, "A", N_ROW, N_COL);
+    MatrixTranspose(A, B, N_ROW, N_COL);
+    MatrixPrint(B, "A Transpose", N_COL, N_ROW);
+}
 
 void VectorAddTest()
 {
@@ -45,35 +70,90 @@ void VectorAddTest()
     VectorPrint(C, "C", N_ROW*N_COL);
 
 }
+void MatrixAdd(float32_t *SrcA, float32_t *SrcB, float32_t *Dst, int rowSize, int colSize)
+{
+    for (int i = 0; i < rowSize; i++)
+    {
+        for (int j = 0; j < colSize; j++)
+        {
+            Dst[i * colSize + j] = SrcA[i * colSize + j] + SrcB[i * colSize + j];
+        }
+    }
+}
 
 
-void cdist(float32_t *SrcA, float32_t *SrcB, float32_t *Dst, int rowSizeSrcA, int colSizeSrcA, int colSizeSrcB)
+void cdist(float32_t *SrcA, float32_t *SrcB, float32_t *Dst, int rowSizeSrc, int colSizeSrc)
 {
     
     float32_t *xTemp;
     float32_t *yTemp;
+    float32_t *SrcBTransposed;
     float32_t *sumResult; 
 
-    sumResult = (float32_t *) malloc(rowSizeSrcA * colSizeSrcB * sizeof(float32_t));
-    xTemp = (float32_t *) malloc(rowSizeSrcA * sizeof(float32_t));  
-    yTemp = (float32_t *) malloc(colSizeSrcA * sizeof(float32_t)); // colSizeSrcA must be same as the rowSizeSrcB
+    sumResult = (float32_t *) malloc(rowSizeSrc * rowSizeSrc * sizeof(float32_t));
+    SrcBTransposed = (float32_t *) malloc(rowSizeSrc * colSizeSrc * sizeof(float32_t));
+    xTemp = (float32_t *) malloc(rowSizeSrc * sizeof(float32_t));  
+    yTemp = (float32_t *) malloc(rowSizeSrc * sizeof(float32_t)); // colSizeSrcA must be same as the rowSizeSrcB
 
+    /* Initialize xtemp and ytemp */
+    VectorInit(xTemp, rowSizeSrc, 0, OFF);
+    VectorInit(yTemp, rowSizeSrc, 0, OFF);
+
+    /* Print The two Input Matrices */
+    MatrixPrint(SrcA, "SrcA", rowSizeSrc, colSizeSrc);
+    MatrixPrint(SrcB, "SrcB", rowSizeSrc, colSizeSrc);
+
+    /* Embed Transpose */
+    
+    MatrixTranspose(SrcB, SrcBTransposed, rowSizeSrc, colSizeSrc); /* y = transpose(B) */
+    MatrixPrint(SrcBTransposed, "SrcBTransposed", colSizeSrc, rowSizeSrc);
     /* Matrix Multiplications */
-    matMul(SrcA, SrcB, Dst, rowSizeSrcA, colSizeSrcA, colSizeSrcB);
-    MatrixPrint(Dst, "Result", rowSizeSrcA, colSizeSrcB);
+    matMul(SrcA, SrcBTransposed, Dst, rowSizeSrc, colSizeSrc, rowSizeSrc); /* -2xy */
+    MatrixPrint(Dst, "MatMul Result", rowSizeSrc, rowSizeSrc);
     /* Sum the elements of each row */
-    MatToVectorSum(SrcA, xTemp, rowSizeSrcA, colSizeSrcB);
-    MatToVectorSum(SrcB, yTemp, colSizeSrcA, colSizeSrcB);
+    MatToVectorSum(SrcA, xTemp, rowSizeSrc, colSizeSrc); /* reduce(x, 'i d -> i', sum) */
+    MatToVectorSum(SrcB, yTemp, rowSizeSrc, colSizeSrc); /* reduce(y, 'i d -> i', sum) */
 
-    VectorPrint(xTemp, "xTemp", rowSizeSrcA);
-    VectorPrint(yTemp, "yTemp", colSizeSrcA);
+    VectorPrint(xTemp, "xTemp", rowSizeSrc);
+    VectorPrint(yTemp, "yTemp", rowSizeSrc);
     /* Add x and y*/
-    VectorToMatrixAdd(xTemp, yTemp, sumResult, rowSizeSrcA, colSizeSrcA);
-
+    VectorToMatrixAdd(xTemp, yTemp, sumResult, rowSizeSrc, rowSizeSrc); /* x + y */
+    MatrixPrint(sumResult, "SumResult", rowSizeSrc, rowSizeSrc);    
     /* Add the result of matrix multiplication and sum of x and y */
+    MatrixAdd(Dst, sumResult, Dst, rowSizeSrc, rowSizeSrc); /* -2xy + x + y */
+    MatrixPrint(Dst, "Result", rowSizeSrc, rowSizeSrc); /* -2xy + x + y */
 
 }
 
+
+
+
+
+void MatrixAddTest()
+{
+    float32_t *A;
+    float32_t *B;
+    float32_t *C; 
+    A = (float32_t *) malloc(N_COL*N_ROW * sizeof(float32_t));
+    B = (float32_t *) malloc(N_COL*N_ROW * sizeof(float32_t));
+    C = (float32_t *) malloc(N_ROW * N_ROW * sizeof(float32_t));
+
+    
+    // Initialize the matrices
+    MatrixInit(A, N_ROW, N_COL);
+    MatrixInit(B, N_ROW, N_COL);
+    MatrixInit(C, N_ROW, N_ROW);
+
+    // Print the matrices
+    MatrixPrint(A, "A", N_ROW, N_COL);
+    MatrixPrint(B, "B", N_ROW, N_COL);
+
+    // Add the matrices
+    MatrixAdd(A, B, C, N_ROW, N_COL);
+
+    // Print the result
+    MatrixPrint(C, "C", N_ROW, N_COL);
+}
 
 
 void cdist_test()
@@ -87,12 +167,12 @@ void cdist_test()
 
     
     // Initialize the matrices
-    MatrixInit(A, N_ROW, N_COL);
-    MatrixInit(B, N_COL, N_ROW);
-    MatrixInit(C, N_ROW, N_ROW);
+    MatrixInit(A, N_ROW, N_COL );
+    MatrixInit(B, N_ROW, N_COL );
+    MatrixInit(C, N_ROW, N_ROW );
 
     // Print the matrices
-    cdist(A, B, C, N_ROW, N_COL, N_ROW);
+    cdist(A, B, C, N_ROW, N_COL);
 }
 
 
@@ -104,46 +184,10 @@ int main(void)
 
     uint32_t errors = 0;
     
-
-    VectorAddTest();
-    // float32_t *A;
-    // float32_t *B;
-    // float32_t *C; 
-    // A = (float32_t *) malloc(N_COL*N_ROW * sizeof(float32_t));
-    // B = (float32_t *) malloc(N_COL*N_ROW * sizeof(float32_t));
-    // C = (float32_t *) malloc(N_ROW * N_ROW * sizeof(float32_t));
-
-    
-    // // Initialize the matrices
-    // // MatrixInit(A, N_ROW, N_COL);
-    // // MatrixInit(B, N_COL, N_ROW);
-    // // MatrixInit(C, N_ROW, N_ROW);
-
-    // // Print the matrices
-
-
-    // printf("Result of matrix A:\n");
-    // matrix_print( A, "A", N_ROW, N_COL);
-    // matrix_print( B, "B", N_COL, N_ROW);
-
-    // matMul(A, B, C, N_ROW, N_COL, N_ROW);
-
-    // matrix_print(C, "Result", N_ROW, N_ROW);
-    // // vector_sum(A, C, N_ROW, N_COL);
-    
-    // // Perform matrix multiplication
-    // matrixMultiply((int*)A, (int*)B, (int*)C, m, n, p);
-    
-    // Print the resultant matrix C
-    
-
-    // printf("Result of Vector C:\n");
-    // for (int i = 0; i < N_ROW; i++)
-    // {
-    //     printf("%f \n", C[i]);
-    // }
-    // // printf("Resultant matrix B:\n");
-    // // matrix_print(B, n, p);
+    // MatrixTransposeTest();
+    // VectorAddTest();
+    // MatrixAddTest();
+    cdist_test();
     printf("Bye !\n");
 
     return errors;

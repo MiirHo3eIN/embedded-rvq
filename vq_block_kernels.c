@@ -77,7 +77,7 @@ void VectorToMatrixAdd(float32_t *pSrcA, float32_t* pSrcB, float32_t *pDst, int 
     {
         for (j = 0; j < rowSizeSrcB; j++)
         {
-            pDst[i*rowSizeSrcB + j] = pSrcA[i] + pSrcB[j];
+            pDst[i*rowSizeSrcA + j] = pSrcA[i] + pSrcB[j];
         }
     }
 }
