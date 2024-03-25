@@ -29,16 +29,7 @@ inline float Sqrt(float x) {
 }
 
 
-void MatrixTranspose(float32_t *Src, float32_t *Dst, int rowSize, int colSize)
-{
-    for (int i = 0; i < rowSize; i++)
-    {
-        for (int j = 0; j < colSize; j++)
-        {
-            Dst[j * rowSize + i] = Src[i * colSize + j];
-        }
-    }
-}
+
 
 
 void MatrixTransposeTest() 

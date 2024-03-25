@@ -128,3 +128,30 @@ void VectorPrint(float32_t *pSrc, char *name , int rowSize)
         printf("%f\n", pSrc[i]);
     }
 }
+
+
+
+void MatrixTranspose(float32_t *pSrc, float32_t *pDst, int rowSize, int colSize)
+{
+
+/*
+    @brief: Perform Transpose of the Input Matrix and store the result in the Output Matrix
+    @author: @MiirHo3eIN
+    @date: 2024-03-25
+
+    @param: float32_t *Src: Pointer to the Input Matrix
+    @param: float32_t *Dst: Pointer to the Output Matrix
+    @param: int rowSize: Number of rows in the Input Matrix
+    @param: int colSize: Number of columns in the Input Matrix
+
+*/
+
+
+    for (int i = 0; i < rowSize; i++)
+    {
+        for (int j = 0; j < colSize; j++)
+        {
+            pDst[j * rowSize + i] = pSrc[i * colSize + j];
+        }
+    }
+}
