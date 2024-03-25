@@ -1,14 +1,16 @@
-[  3%] Built target freertos_printf
-[  7%] Built target bsp
-[ 41%] Built target pmsis_implem
-[ 46%] Built target ri5cy-gap9
+[  2%] Built target freertos_printf
+[ 11%] Built target bsp
+[ 42%] Built target pmsis_implem
+[ 47%] Built target ri5cy-gap9
 [ 52%] Built target freertos_libs
 [ 55%] Built target freertos_pmsis_backend
 [ 69%] Built target pmsis_rtos
-[ 80%] Built target freertos_gap9
-[ 84%] Built target dt
-[ 96%] Built target freertos
-[ 98%] Building C object CMakeFiles/vq_block.dir/vq_block.c.obj
+[ 79%] Built target freertos_gap9
+[ 82%] Built target dt
+[ 94%] Built target freertos
+[ 95%] Building C object CMakeFiles/vq_block.dir/vq_block.c.obj
+[ 97%] Building C object CMakeFiles/vq_block.dir/vq_block_kernels.c.obj
+[ 98%] Building C object CMakeFiles/vq_block.dir/utils.c.obj
 [100%] Linking C executable vq_block
 [100%] Built target vq_block
 [100%] Built target image

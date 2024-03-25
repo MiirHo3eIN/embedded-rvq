@@ -32,7 +32,8 @@ cmake_minimum_required(VERSION 3.19)
 ###############################################################################
 set(TARGET_NAME "vq_block")
 set(TARGET_SRCS vq_block.c )
-
+set(HELPER_SRCS vq_block_kernels.c utils.c)
+set(TARGET_HEADERS vq_block.h)
 ###############################################################################
 # CMake pre initialization
 ###############################################################################
@@ -41,7 +42,8 @@ set(CONFIG_GAP_SDK_HOME $ENV{GAP_SDK_HOME})
 include($ENV{GAP_SDK_HOME}/utils/cmake/setup.cmake)
 
 project(${TARGET_NAME} C ASM)
-add_executable(${TARGET_NAME} ${TARGET_SRCS})
+add_executable(${TARGET_NAME} ${TARGET_SRCS} ${HELPER_SRCS})
+
 ###############################################################################
 # CMake post initialization
 ###############################################################################

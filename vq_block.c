@@ -3,14 +3,15 @@
 #include "stdio.h"
 #include <stdint.h>
 #include <math.h>
+
+#include "vq_block.h"
 /* Scenarios to explore 
 
     1. 
 */
 
 /* Variables used. */
-typedef float float32_t;
-typedef enum {ON, OFF} bool;
+
 
 #define N_ROW 10 // row size
 #define N_COL 20 // column size
@@ -22,122 +23,6 @@ typedef enum {ON, OFF} bool;
 #define N_COL_B 15
 
 
-/* Matrix Multiplication with pointers*/
-// C = A*B where A is MxK, B is KxN, C is MxN
-void matMul(float32_t *A, float32_t *B, float32_t *C, int rowSizeA, int colSizeA, int colSizeB)
-{
-    /*
-        M is rowSize of A
-        K is colSize of A and rowSize of B
-        N is colSize of B
-    */
-    int i = 0; // index of row in A
-    int j = 0; // index of col in B
-    int k = 0; // index of col in A
-
-    float32_t sum;
-    for (i = 0; i < rowSizeA; i++) // row of A
-    {   
-        for (j = 0; j < colSizeB; j++) // col of B
-        {
-            sum = 0;
-            for (k = 0; k < colSizeA; k++) // col of A
-            {
-                sum += A[i * colSizeA + k] * B[k * colSizeB + j];
-            }
-            C[i * colSizeB + j] = sum * -2;
-        }
-    }
-}
-
-void vector_sum(float32_t *Src, float32_t *Dst,int rowSize, int colSize)
-{
-
-    /* Sum the elements of each row */
-    for (int i = 0; i < rowSize; i++)
-    {
-        for (int j = 0; j < colSize; j++)
-        {
-           
-            Dst[i] += (Src[i*colSize + j]*Src[i*colSize + j] );
-        }
-
-        printf("Sum of %d row is %f\n", i, Dst[i]);
-    }
-}
-
-
-void MatrixInit(float32_t *pSrc, int rowSize, int colSize)
-{
-    int i;
-    int j;
-    for (i = 0; i < rowSize; i++)
-    {
-        for (j = 0; j < colSize; j++)
-        {
-            pSrc[i * colSize + j] = (i*colSize) +1 + j; // A[i][j] = i*colSize + j + 1
-        }
-    }
-}
-void matrix_print(float *A, char *matrix_name, int rowSize, int colSize)
-{   
-    printf("%s=", matrix_name); 
-    for (int i = 0; i < rowSize; i++) 
-    {   printf("[");
-        for (int j = 0; j < colSize; j++) 
-        {
-            printf("%f, ", A[i*colSize + j]);
-            // printf("]");
-        }
-        printf("];\n");
-
-    }
-
-}
-
-
-void VectorToMatrixAdd(float32_t *pSrcA, float32_t* pSrcB, float32_t *pDst, int rowSizeSrcA, int rowSizeSrcB)
-{
-    int i;
-    int j;
-    
-    for (i = 0; i < rowSizeSrcA; i++)
-    {
-        for (j = 0; j < rowSizeSrcB; j++)
-        {
-            pDst[i*rowSizeSrcB + j] = pSrcA[i] + pSrcB[j];
-        }
-    }
-}
-
-
-void VectorInit(float32_t *pSrc, int rowSize, float32_t value, bool is_incremental)
-{
-    int i; 
-
-    if (is_incremental == SET)
-    {
-        for (i = 0; i < rowSize; i++)
-        {
-            pSrc[i] = (i+1);
-        }
-    }
-    else
-        for (i = 0; i < rowSize; i++)
-    {
-        pSrc[i] = 1 * value;
-    }
-}
-
-void VectorPrint(float32_t *pSrc, char *name , int rowSize)
-{
-    int i;
-    printf("Vector %s = \n", name);
-    for (i = 0; i < rowSize; i++)
-    {   
-        printf("%f\n", pSrc[i]);
-    }
-}
 
 void VectorAddTest()
 {
@@ -165,17 +50,20 @@ void VectorAddTest()
 void cdist(float32_t *SrcA, float32_t *SrcB, float32_t *Dst, int rowSizeSrcA, int colSizeSrcA, int colSizeSrcB)
 {
     
-    float xTemp[rowSizeSrcA];
-    float yTemp[colSizeSrcA];
+    float32_t *xTemp;
+    float32_t *yTemp;
     float32_t *sumResult; 
 
     sumResult = (float32_t *) malloc(rowSizeSrcA * colSizeSrcB * sizeof(float32_t));
+    xTemp = (float32_t *) malloc(rowSizeSrcA * sizeof(float32_t));  
+    yTemp = (float32_t *) malloc(colSizeSrcA * sizeof(float32_t)); // colSizeSrcA must be same as the rowSizeSrcB
+
     /* Matrix Multiplications */
     matMul(SrcA, SrcB, Dst, rowSizeSrcA, colSizeSrcA, colSizeSrcB);
-    matrix_print(Dst, "Result", rowSizeSrcA, colSizeSrcB);
+    MatrixPrint(Dst, "Result", rowSizeSrcA, colSizeSrcB);
     /* Sum the elements of each row */
-    vector_sum(SrcA, xTemp, rowSizeSrcA, colSizeSrcB);
-    vector_sum(SrcB, yTemp, colSizeSrcA, colSizeSrcB);
+    MatToVectorSum(SrcA, xTemp, rowSizeSrcA, colSizeSrcB);
+    MatToVectorSum(SrcB, yTemp, colSizeSrcA, colSizeSrcB);
 
     VectorPrint(xTemp, "xTemp", rowSizeSrcA);
     VectorPrint(yTemp, "yTemp", colSizeSrcA);
@@ -217,7 +105,7 @@ int main(void)
     uint32_t errors = 0;
     
 
-    // VectorAddTest();
+    VectorAddTest();
     // float32_t *A;
     // float32_t *B;
     // float32_t *C; 

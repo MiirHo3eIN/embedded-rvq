@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "*.rmd": "markdown",
+        "vq_block.h": "c"
+    }
+}
