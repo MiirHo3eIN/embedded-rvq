@@ -155,3 +155,19 @@ void MatrixTranspose(float32_t *pSrc, float32_t *pDst, int rowSize, int colSize)
         }
     }
 }
+
+
+/*
+    @brief: Sqrt function implemented using assembly instruction fsqrt.s
+    @author: @ah-kiamarzi
+    
+    @param: float x: Input value
+    @return: float: Square root of the input value
+*/
+ float Sqrt(float x) {
+        float res;
+        asm("fsqrt.s %0, %1":"=f"(res):"f"(x));
+        return res;
+}
+
+

@@ -22,13 +22,6 @@
 #define N_ROW_B 20
 #define N_COL_B 10
 
-inline float Sqrt(float x) {
-        float res;
-        asm("fsqrt.s %0, %1":"=f"(res):"f"(x));
-        return res;
-}
-
-
 
 
 

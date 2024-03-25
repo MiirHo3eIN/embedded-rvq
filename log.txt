@@ -9,7 +9,9 @@
 [ 82%] Built target dt
 [ 94%] Built target freertos
 [ 95%] Building C object CMakeFiles/vq_block.dir/vq_block.c.obj
-[ 97%] Linking C executable vq_block
+[ 97%] Building C object CMakeFiles/vq_block.dir/vq_block_kernels.c.obj
+[ 98%] Building C object CMakeFiles/vq_block.dir/utils.c.obj
+[100%] Linking C executable vq_block
 [100%] Built target vq_block
 [100%] Built target image
 [100%] Built target flash
