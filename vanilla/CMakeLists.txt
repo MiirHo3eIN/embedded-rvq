@@ -30,10 +30,11 @@ cmake_minimum_required(VERSION 3.19)
 ###############################################################################
 # Panel Control
 ###############################################################################
-set(TARGET_NAME "vq_block")
-set(TARGET_SRCS vq_block.c )
+set(TARGET_NAME "main_vq")
+# set(TARGET_SRCS vq_block.c )
+set(TARGET_SRCS main_vq.c)
 set(HELPER_SRCS vq_block_kernels.c utils.c)
-set(TARGET_HEADERS vq_block.h)
+set(TARGET_HEADERS vq_block.h inputs.h codebook.h)
 ###############################################################################
 # CMake pre initialization
 ###############################################################################
