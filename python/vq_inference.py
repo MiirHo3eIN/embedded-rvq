@@ -20,7 +20,8 @@ parser.add_argument('test', type=str, help=parser_help, choices=['vector_sum',
                                                                  'cdist', 
                                                                  'matMul', 
                                                                  'vector_to_matrix', 
-                                                                 'mat_transpose'])
+                                                                 'mat_transpose', 
+                                                                 'single_layer_vq'])
 
 # Parse the arguments
 args = parser.parse_args()
@@ -175,6 +176,43 @@ def euclidean_distance_test():
     print(x_c_res)
 
 
+
+def cdist(x, embeds): 
+    __doc__ = r"""  
+
+    This function is an exact copy of the cdist function in the VQ library.
+    you can find it in the following repository: 
+        <https://github.com/MiirHo3eIN/vector-quantize-pytorch/tree/master>
+    """
+
+    x2 = reduce(x ** 2, 'b n d -> b n', 'sum')
+    embeds2 = reduce(embeds ** 2, 'b n d -> b n', 'sum')
+    x_embeds = einsum('b i d, b j d -> b i j', x, embeds)*-2
+
+    return (rearrange(x2, 'b i -> b i 1') + rearrange(embeds2, 'b j -> b 1 j') + x_embeds).clamp(min = 0).sqrt()
+
+def single_layer_vq_test(): 
+
+    torch.manual_seed(1248)
+    # define a float32_t codebook with 128 entries, each of which is 100-dimensional
+    codebook = torch.randn(size = (1, 128, 100), dtype=torch.float32)
+    # define a float32_t input tensor of a 100 batch samples, each of which is 100-dimensional
+    input = torch.randn(size = (100, 1, 100), dtype=torch.float32)
+    # define a float32_t output tensor of the same size as the input tensor
+
+    dist = cdist(input, codebook)
+
+    print(dist.size())
+
+    # Save dists & inputs
+    dists = dist.detach().numpy()
+    inputs = input.detach().numpy()
+    codebooks = codebook.detach().numpy()   
+
+    np.save("dists.npy", dists)
+    np.save("inputs.npy", inputs)
+    np.save("codebooks.npy", codebooks)
+
 if __name__ == "__main__":
     print(f"The selected test is {args.test}\n")
     if args.test == 'cdist':
@@ -187,3 +225,5 @@ if __name__ == "__main__":
         vector_to_matrix_test()
     elif args.test == 'mat_transpose': 
         mat_transpose_test()
+    elif args.test == 'single_layer_vq':
+        single_layer_vq_test()
