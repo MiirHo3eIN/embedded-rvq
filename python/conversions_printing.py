@@ -33,6 +33,7 @@ if __name__ == '__main__':
 
     # Here we treat the inputs sepearately as a given input has dimension of [1x100]
     # Further, the codebook will be a 2D matrix in which we will have 128 rows and 100 columns
-
-    npy2Carray(input[0, 0, :], 'input', 'input.h', mode = 'w', fmt = '{}', ifndef = False)
+    for idx in range(input.shape[0]):
+        npy2Carray(input[idx, 0, :], f'input_{idx}', f'c_samples/input_{idx}.h', mode = 'w', fmt = '{}', ifndef = False)
+    # npy2Carray(input[0, 0, :], 'input', 'input.h', mode = 'w', fmt = '{}', ifndef = False)
     npy2Carray(codebook[0, :, :], 'codebook', 'codebook.h', mode = 'w', fmt = '{}', ifndef = False)

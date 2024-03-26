@@ -1,15 +1,107 @@
-[  2%] Built target freertos_printf
-[ 11%] Built target bsp
-[ 42%] Built target pmsis_implem
-[ 47%] Built target ri5cy-gap9
-[ 52%] Built target freertos_libs
-[ 55%] Built target freertos_pmsis_backend
-[ 69%] Built target pmsis_rtos
-[ 79%] Built target freertos_gap9
-[ 82%] Built target dt
-[ 94%] Built target freertos
+-- [[36mCustom BSP[m] Custom BSP unused.
+-- [[1;36mPython[m] Interpreter found here /home/miir_ho3ein/projects/pulp/gap9/.venv/bin/python3.9
+-- [[1;32mKconfig[m] KCONFIG_CONFIG environnement variable has not been exported.
+-- [[1;32mKconfig[m] Using default value sdk: "sdk.config" and app: "sdk.config".
+-- [[1;36mAutoTiler[m] Tiler lib path: /home/miir_ho3ein/projects/pulp/gap9/gap_sdk_private/tools/autotiler_v3/Autotiler/LibTile.a
+-- [[1;36mNNTOOL[m] Using nntool in /home/miir_ho3ein/projects/pulp/gap9/gap_sdk_private/tools/nntool/scripts/nntool
+-- [[1;32mSFU[m] Using SFU in 
+-- [1;31m[ CMAKE_C_FLAGS ][m  -march=rv32imcxgap9 -mPE=8 -mFC=1 -mint64  -fcommon -fno-jump-tables -fno-tree-loop-distribute-patterns -fno-delete-null-pointer-checks -fomit-frame-pointer -Os -fmessage-length=0 -fno-exceptions -ffunction-sections -fdata-sections -funsigned-char -Wall -Wextra -Werror -Wno-unused-parameter -Wno-unused-function -Wno-unused-variable -Wno-unused-but-set-variable -Wno-implicit-fallthrough  -Wno-discarded-qualifiers
+-- [1;31m[CMAKE_CXX_FLAGS][m  -march=rv32imcxgap9 -mPE=8 -mFC=1 -mint64  -fcommon -fno-jump-tables -fno-tree-loop-distribute-patterns -fno-delete-null-pointer-checks -fomit-frame-pointer -Os -fmessage-length=0 -fno-exceptions -ffunction-sections -fdata-sections -funsigned-char -Wall -Wextra -Werror -Wno-unused-parameter -Wno-unused-function -Wno-unused-variable -Wno-unused-but-set-variable -Wno-implicit-fallthrough 
+-- [1;31m[CMAKE_ASM_FLAGS][m  -x assembler-with-cpp -DASSEMBLY_LANGUAGE -Os
+-- [[1;33mDT[m] Formating configuration file
+-- [[1;33mDT[m] Selected options : [36mgap9_v2_wlcsp;gap9audio_v1[m
+-- [[1;33mDT[m] Compiling [36mgap9_v2_wlcsp.dts[m
+-- [[1;33mDT[m] Compiling [36mgap9audio_v1.dts[m
+-- [[1;33mDT[m] Dumping C header file
+-- [[1;34mBoard[m] GAP Family : [36m9[m
+-- [[1;34mBoard[m] GAP Version : [36m2[m
+-- [m[[1;35mCompiler[m] Compiling for FreeRTOS on riscv32 using compiler found at /usr/lib/gap_riscv_toolchain/bin/riscv32-unknown-elf-gcc
+-- BSP_OPTIONS: -D__GAP_BOARD_GAP9AUDIO_V1__=1
+-- [[1;32mFreeRTOS[m] CMAKE_CURRENT_BINARY_DIR/home/miir_ho3ein/projects/pulp/applications/embedded-rvq/vanilla/build/freertos
+-- [m[[1;32mGAPY[m] Using gapy v2
+-- [m[[1;32mGAPY[m] Platform set to gvsoc.
+-- [m[[1;32mGAPY[m] GAPY target command is : --target=gap9.evk
+-- Preparing vscode scripts for/home/miir_ho3ein/projects/pulp/applications/embedded-rvq/vanilla/build/vq_block
+-- [m[[1;35mABB[m] GAPY_OPENOCD_SCRIPT: gap9revb.tcl
+-- [m[[1;35mGDB[m] OFF
+-- Configuring done (0.2s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/miir_ho3ein/projects/pulp/applications/embedded-rvq/vanilla/build
+[  1%] Building C object freertos/vendors/gwt/libs/printf/CMakeFiles/freertos_printf.dir/printf.c.obj
+[  3%] Linking C static library libfreertos_printf.a
+[  3%] Built target freertos_printf
+[  4%] Building C object freertos/pmsis/bsp/CMakeFiles/bsp.dir/bsp/bsp.c.obj
+[  6%] Building C object freertos/pmsis/bsp/CMakeFiles/bsp.dir/bsp/boards/bsp_gap9audio_v1.c.obj
+[  7%] Linking C static library libbsp.a
+[  7%] Built target bsp
+[  9%] Building C object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/chips/gap9/maestro/driver/maestro.c.obj
+[ 10%] Building C object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/chips/gap9/maestro/driver/maestro_irq.c.obj
+[ 12%] Building C object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/chips/gap9/gpio/driver/gpio.c.obj
+[ 13%] Building ASM object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/chips/gap9/gpio/driver/gpio_asm.S.obj
+[ 15%] Building C object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/chips/gap9/efuse/driver/efuse.c.obj
+[ 16%] Building C object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/chips/gap9/fll/driver/fll.c.obj
+[ 18%] Building ASM object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/chips/gap9/cluster/driver/cluster-cc.S.obj
+[ 20%] Building C object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/chips/gap9/cluster/driver/cluster.c.obj
+[ 21%] Building ASM object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/chips/gap9/cluster/driver/cluster-pe-team.S.obj
+[ 23%] Building ASM object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/chips/gap9/cluster/driver/cluster-pe-workgroup.S.obj
+[ 24%] Building C object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/chips/gap9/udma_core/driver/udma_core.c.obj
+[ 26%] Building C object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/malloc/alloc.c.obj
+[ 27%] Building C object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/malloc/alloc_pool.c.obj
+[ 29%] Building C object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/malloc/pi_malloc.c.obj
+[ 30%] Building C object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/chips/gap9/fc_event/driver/fc_event.c.obj
+[ 32%] Building C object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/chips/gap9/pad/driver/pad.c.obj
+[ 33%] Building ASM object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/utils/asm_util.S.obj
+[ 35%] Building C object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/utils/ctors_dtors.c.obj
+[ 36%] Building C object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/chips/gap9/timer/driver/timer.c.obj
+[ 38%] Building ASM object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/chips/gap9/timer/driver/timer_asm.S.obj
+[ 40%] Linking C static library libpmsis_implem.a
+[ 40%] Built target pmsis_implem
+[ 41%] Building ASM object freertos/freertos_kernel/portable/GCC/RI5CY-GAP9/CMakeFiles/ri5cy-gap9.dir/port_asm.S.obj
+[ 43%] Building C object freertos/freertos_kernel/portable/GCC/RI5CY-GAP9/CMakeFiles/ri5cy-gap9.dir/port.c.obj
+[ 44%] Linking C static library libri5cy-gap9.a
+[ 44%] Built target ri5cy-gap9
+[ 46%] Building C object freertos/vendors/gwt/libs/CMakeFiles/freertos_libs.dir/src/errno.c.obj
+[ 47%] Building C object freertos/vendors/gwt/libs/CMakeFiles/freertos_libs.dir/src/stdlib.c.obj
+[ 49%] Building C object freertos/vendors/gwt/libs/CMakeFiles/freertos_libs.dir/src/string.c.obj
+[ 50%] Linking C static library libfreertos_libs.a
+[ 50%] Built target freertos_libs
+[ 52%] Building C object freertos/vendors/gwt/pmsis/backend/CMakeFiles/freertos_pmsis_backend.dir/pmsis_backend_native_task_api.c.obj
+[ 53%] Linking C static library libfreertos_pmsis_backend.a
+[ 53%] Built target freertos_pmsis_backend
+[ 55%] Building C object freertos/vendors/gwt/pmsis/rtos/CMakeFiles/pmsis_rtos.dir/malloc/l2_priv_malloc.c.obj
+[ 56%] Building C object freertos/vendors/gwt/pmsis/rtos/CMakeFiles/pmsis_rtos.dir/malloc/l2_malloc.c.obj
+[ 58%] Building C object freertos/vendors/gwt/pmsis/rtos/CMakeFiles/pmsis_rtos.dir/malloc/malloc_internal.c.obj
+[ 60%] Building C object freertos/vendors/gwt/pmsis/rtos/CMakeFiles/pmsis_rtos.dir/malloc/pi_malloc.c.obj
+[ 61%] Building C object freertos/vendors/gwt/pmsis/rtos/CMakeFiles/pmsis_rtos.dir/os/device.c.obj
+[ 63%] Building C object freertos/vendors/gwt/pmsis/rtos/CMakeFiles/pmsis_rtos.dir/os/pmsis_evt.c.obj
+[ 64%] Building C object freertos/vendors/gwt/pmsis/rtos/CMakeFiles/pmsis_rtos.dir/event_kernel/event_kernel.c.obj
+[ 66%] Building C object freertos/vendors/gwt/pmsis/rtos/CMakeFiles/pmsis_rtos.dir/pi_log.c.obj
+[ 67%] Linking C static library libpmsis_rtos.a
+[ 67%] Built target pmsis_rtos
+[ 69%] Building ASM object freertos/vendors/gwt/gap9/CMakeFiles/freertos_gap9.dir/src/device/gap_iet.S.obj
+[ 70%] Building ASM object freertos/vendors/gwt/gap9/CMakeFiles/freertos_gap9.dir/src/device/startup_gap.S.obj
+[ 72%] Building C object freertos/vendors/gwt/gap9/CMakeFiles/freertos_gap9.dir/config/FreeRTOS_util.c.obj
+[ 73%] Building C object freertos/vendors/gwt/gap9/CMakeFiles/freertos_gap9.dir/src/device/gap_it.c.obj
+[ 75%] Building C object freertos/vendors/gwt/gap9/CMakeFiles/freertos_gap9.dir/src/device/system_gap.c.obj
+[ 76%] Building C object freertos/vendors/gwt/gap9/CMakeFiles/freertos_gap9.dir/src/driver/gap_io.c.obj
+[ 78%] Linking C static library libfreertos_gap9.a
+[ 78%] Built target freertos_gap9
+[ 80%] Building C object freertos/CMakeFiles/dt.dir/__/devicetree/include/dt.c.obj
+[ 81%] Linking C static library libdt.a
+[ 81%] Built target dt
+[ 83%] Building C object freertos/CMakeFiles/freertos.dir/freertos_kernel/list.c.obj
+[ 84%] Building C object freertos/CMakeFiles/freertos.dir/freertos_kernel/queue.c.obj
+[ 86%] Building C object freertos/CMakeFiles/freertos.dir/freertos_kernel/tasks.c.obj
+[ 87%] Building ASM object freertos/CMakeFiles/freertos.dir/freertos_kernel/freertos_task.S.obj
+[ 89%] Building C object freertos/CMakeFiles/freertos.dir/freertos_kernel/timers.c.obj
+[ 90%] Building C object freertos/CMakeFiles/freertos.dir/freertos_kernel/event_groups.c.obj
+[ 92%] Building C object freertos/CMakeFiles/freertos.dir/freertos_kernel/stream_buffer.c.obj
+[ 93%] Linking C static library libfreertos.a
+[ 93%] Built target freertos
 [ 95%] Building C object CMakeFiles/vq_block.dir/vq_block.c.obj
-[ 97%] Linking C executable vq_block
+[ 96%] Building C object CMakeFiles/vq_block.dir/vq_block_kernels.c.obj
+[ 98%] Building C object CMakeFiles/vq_block.dir/utils.c.obj
+[100%] Linking C executable vq_block
 [100%] Built target vq_block
 [100%] Built target image
 [100%] Built target flash
