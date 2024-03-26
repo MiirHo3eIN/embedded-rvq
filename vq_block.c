@@ -13,8 +13,8 @@
 /* Variables used. */
 
 
-#define N_ROW 10 // row size
-#define N_COL 2 // column size
+#define N_ROW 1 // row size
+#define N_COL 100 // column size
 
 #define N_ROW_A 10
 #define N_COL_A 20

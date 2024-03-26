@@ -1,0 +1,2 @@
+<class 'torch.Tensor'>
+torch.Size([8, 128, 100])
