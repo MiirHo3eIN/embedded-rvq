@@ -5,6 +5,7 @@
 #include <math.h>
 
 #include "vq_block.h"
+#include "input_0.h"
 /* Scenarios to explore 
 
     1. 
@@ -110,6 +111,13 @@ void cdist_test()
 }
 
 
+void MatrixRead_test()
+{
+    float32_t *A;
+    // A = (float32_t *) malloc(N_COL*N_ROW * sizeof(float32_t));
+    MatrixPrint((float32_t *)input_0, "Sample_0", N_ROW, N_COL);
+}
+
 /* Program Entry. */
 int main(void)
 {
@@ -121,7 +129,8 @@ int main(void)
     // MatrixTransposeTest();
     // VectorAddTest();
     // MatrixAddTest();
-    cdist_test();
+    // cdist_test();
+    MatrixRead_test();
     printf("Bye !\n");
 
     return errors;

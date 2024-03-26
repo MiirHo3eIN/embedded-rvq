@@ -2,6 +2,7 @@
     "files.associations": {
         "*.rmd": "markdown",
         "vq_block.h": "c",
-        "math.h": "c"
+        "math.h": "c",
+        "input_0.h": "c"
     }
 }
