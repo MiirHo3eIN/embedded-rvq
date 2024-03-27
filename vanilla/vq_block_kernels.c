@@ -8,10 +8,10 @@
 
 
 /* Constant Variables */
-
+#define PERFORMANCE ON 
+// #define VERBOSE ON
 
 /* Functions */
-
 
 /* Matrix Multiplication with pointers*/
 // C = A*B where A is MxK, B is KxN, C is MxN
@@ -154,6 +154,9 @@ float32_t cdist(float32_t *SrcA, float32_t *SrcB, int rowSizeSrc, int colSizeSrc
     float32_t *sumResult; 
     float32_t *Dst;
 
+    uint32_t cycles = 0, tim_cycles  = 0;
+
+
     sumResult = (float32_t *) malloc(rowSizeSrc * rowSizeSrc * sizeof(float32_t));
     SrcBTransposed = (float32_t *) malloc(rowSizeSrc * colSizeSrc * sizeof(float32_t));
     xTemp = (float32_t *) malloc(rowSizeSrc * sizeof(float32_t));  
@@ -165,31 +168,78 @@ float32_t cdist(float32_t *SrcA, float32_t *SrcB, int rowSizeSrc, int colSizeSrc
     VectorInit(yTemp, rowSizeSrc, 0, OFF);
     MatrixInit(Dst, rowSizeSrc, rowSizeSrc);
     /* Print The two Input Matrices */
-    if (verbose == ON )     MatrixPrint(SrcA, "SrcA", rowSizeSrc, colSizeSrc);
-    if (verbose == ON )     MatrixPrint(SrcB, "SrcB", rowSizeSrc, colSizeSrc);
+    #if defined (VERBOSE ) 
+        MatrixPrint(SrcA, "SrcA", rowSizeSrc, colSizeSrc);
+        MatrixPrint(SrcB, "SrcB", rowSizeSrc, colSizeSrc);
+    #endif
     /* Embed Transpose */
+    
+
+        pi_perf_reset(); 
+        pi_perf_start();
+
     MatrixTranspose(SrcB, SrcBTransposed, rowSizeSrc, colSizeSrc); /* y = transpose(B) */
+        
     if (verbose == ON )     MatrixPrint(SrcBTransposed, "SrcBTransposed", colSizeSrc, rowSizeSrc);
+        pi_perf_stop();
+        cycles = pi_perf_read(PI_PERF_ACTIVE_CYCLES);
+        tim_cycles = pi_perf_read(PI_PERF_CYCLES);
+        printf("Performance of the Transpose func : %d cycles Timer : %d cycles\n", cycles, tim_cycles);   
+   
+   
+   
+   
     /* Matrix Multiplications */
+        pi_perf_conf(1 << PI_PERF_CYCLES | 1 << PI_PERF_ACTIVE_CYCLES);     
+        pi_perf_reset(); 
+        pi_perf_start();
     matMul(SrcA, SrcBTransposed, Dst, rowSizeSrc, colSizeSrc, rowSizeSrc); /* -2xy */
+        pi_perf_stop();
+        cycles = pi_perf_read(PI_PERF_ACTIVE_CYCLES);
+        tim_cycles = pi_perf_read(PI_PERF_CYCLES);
+        printf("Performance of the MatMul func : %d cycles Timer : %d cycles\n", cycles, tim_cycles);
+    
     free(SrcBTransposed);
     if (verbose == ON )    MatrixPrint(Dst, "MatMul Result", rowSizeSrc, rowSizeSrc);
 
     /* Sum the elements of each row */
+    
+        pi_perf_reset(); 
+        pi_perf_start();
     MatToVectorSum(SrcA, xTemp, rowSizeSrc, colSizeSrc); /* reduce(x, 'i d -> i', sum) */
     MatToVectorSum(SrcB, yTemp, rowSizeSrc, colSizeSrc); /* reduce(y, 'i d -> i', sum) */
+        pi_perf_stop();
+        cycles = pi_perf_read(PI_PERF_ACTIVE_CYCLES);
+        tim_cycles = pi_perf_read(PI_PERF_CYCLES);
+        printf("Performance of the two MatToVector func : %d cycles Timer : %d cycles\n", cycles, tim_cycles);
+
 
     if (verbose == ON )     VectorPrint(xTemp, "xTemp", rowSizeSrc);
     if (verbose == ON )     VectorPrint(yTemp, "yTemp", rowSizeSrc);
     /* Add x and y*/
+        pi_perf_reset(); 
+        pi_perf_start();
     VectorToMatrixAdd(xTemp, yTemp, sumResult, rowSizeSrc, rowSizeSrc); /* x + y */
+        pi_perf_stop();
+        cycles = pi_perf_read(PI_PERF_ACTIVE_CYCLES);
+        tim_cycles = pi_perf_read(PI_PERF_CYCLES);
+        printf("Performance of the VectorToMatAdd func : %d cycles Timer : %d cycles\n", cycles, tim_cycles);
+
+
     free(xTemp);
     free(yTemp);
     
     if (verbose == ON )     MatrixPrint(sumResult, "SumResult", rowSizeSrc, rowSizeSrc);    
     
     /* Add the result of matrix multiplication and sum of x and y */
+        pi_perf_reset(); 
+        pi_perf_start();
     MatrixAdd(Dst, sumResult, Dst, rowSizeSrc, rowSizeSrc); /* -2xy + x + y */
+        pi_perf_stop();
+        cycles = pi_perf_read(PI_PERF_ACTIVE_CYCLES);
+        tim_cycles = pi_perf_read(PI_PERF_CYCLES);
+        printf("Performance of the MatrixAdd_W_SQRT func : %d cycles Timer : %d cycles\n", cycles, tim_cycles);
+
     if (verbose == ON )     MatrixPrint(Dst, "Result", rowSizeSrc, rowSizeSrc); /* -2xy + x + y */
     
     
