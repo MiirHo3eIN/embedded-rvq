@@ -31,8 +31,8 @@ cmake_minimum_required(VERSION 3.19)
 # Panel Control
 ###############################################################################
 set(TARGET_NAME "main_vq")
-# set(TARGET_SRCS vq_block.c )
-set(TARGET_SRCS main_vq.c)
+# set(TARGET_SRCS vq_block.c ) # uncomment this line to run tests for core blocks
+set(TARGET_SRCS main_vq.c) # uncomment this line to run the main application
 set(HELPER_SRCS vq_block_kernels.c utils.c)
 set(TARGET_HEADERS vq_block.h inputs.h codebook.h)
 ###############################################################################

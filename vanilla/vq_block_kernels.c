@@ -66,7 +66,7 @@ void MatToVectorSum(float32_t *Src, float32_t *Dst,int rowSize, int colSize)
             Dst[i] += (Src[i*colSize + j]*Src[i*colSize + j] );
         }
 
-        printf("Sum of %d row is %f\n", i, Dst[i]);
+        // printf("Sum of %d row is %f\n", i, Dst[i]);
     }
 }
 
@@ -127,7 +127,7 @@ void MatrixAdd(float32_t *SrcA, float32_t *SrcB, float32_t *Dst, int rowSize, in
 
 
 
-void cdist(float32_t *SrcA, float32_t *SrcB, float32_t *Dst, int rowSizeSrc, int colSizeSrc)
+float32_t cdist(float32_t *SrcA, float32_t *SrcB, int rowSizeSrc, int colSizeSrc)
 {
 
     /*
@@ -152,36 +152,45 @@ void cdist(float32_t *SrcA, float32_t *SrcB, float32_t *Dst, int rowSizeSrc, int
     float32_t *yTemp;
     float32_t *SrcBTransposed;
     float32_t *sumResult; 
-
+    float32_t *Dst;
 
     sumResult = (float32_t *) malloc(rowSizeSrc * rowSizeSrc * sizeof(float32_t));
     SrcBTransposed = (float32_t *) malloc(rowSizeSrc * colSizeSrc * sizeof(float32_t));
     xTemp = (float32_t *) malloc(rowSizeSrc * sizeof(float32_t));  
     yTemp = (float32_t *) malloc(rowSizeSrc * sizeof(float32_t)); // colSizeSrcA must be same as the rowSizeSrcB
+    Dst = (float32_t *) malloc(rowSizeSrc * rowSizeSrc * sizeof(float32_t)); 
 
     /* Initialize xtemp and ytemp */
     VectorInit(xTemp, rowSizeSrc, 0, OFF);
     VectorInit(yTemp, rowSizeSrc, 0, OFF);
+    MatrixInit(Dst, rowSizeSrc, rowSizeSrc);
     /* Print The two Input Matrices */
-    MatrixPrint(SrcA, "SrcA", rowSizeSrc, colSizeSrc);
-    MatrixPrint(SrcB, "SrcB", rowSizeSrc, colSizeSrc);
+    // MatrixPrint(SrcA, "SrcA", rowSizeSrc, colSizeSrc);
+    // MatrixPrint(SrcB, "SrcB", rowSizeSrc, colSizeSrc);
     /* Embed Transpose */
     MatrixTranspose(SrcB, SrcBTransposed, rowSizeSrc, colSizeSrc); /* y = transpose(B) */
-    MatrixPrint(SrcBTransposed, "SrcBTransposed", colSizeSrc, rowSizeSrc);
+    // MatrixPrint(SrcBTransposed, "SrcBTransposed", colSizeSrc, rowSizeSrc);
     /* Matrix Multiplications */
     matMul(SrcA, SrcBTransposed, Dst, rowSizeSrc, colSizeSrc, rowSizeSrc); /* -2xy */
-    MatrixPrint(Dst, "MatMul Result", rowSizeSrc, rowSizeSrc);
+    free(SrcBTransposed);
+    // MatrixPrint(Dst, "MatMul Result", rowSizeSrc, rowSizeSrc);
+
     /* Sum the elements of each row */
     MatToVectorSum(SrcA, xTemp, rowSizeSrc, colSizeSrc); /* reduce(x, 'i d -> i', sum) */
     MatToVectorSum(SrcB, yTemp, rowSizeSrc, colSizeSrc); /* reduce(y, 'i d -> i', sum) */
 
-    VectorPrint(xTemp, "xTemp", rowSizeSrc);
-    VectorPrint(yTemp, "yTemp", rowSizeSrc);
+    // VectorPrint(xTemp, "xTemp", rowSizeSrc);
+    // VectorPrint(yTemp, "yTemp", rowSizeSrc);
     /* Add x and y*/
     VectorToMatrixAdd(xTemp, yTemp, sumResult, rowSizeSrc, rowSizeSrc); /* x + y */
-    MatrixPrint(sumResult, "SumResult", rowSizeSrc, rowSizeSrc);    
+    
+    // MatrixPrint(sumResult, "SumResult", rowSizeSrc, rowSizeSrc);    
     /* Add the result of matrix multiplication and sum of x and y */
     MatrixAdd(Dst, sumResult, Dst, rowSizeSrc, rowSizeSrc); /* -2xy + x + y */
     MatrixPrint(Dst, "Result", rowSizeSrc, rowSizeSrc); /* -2xy + x + y */
-
+    /* Free the allocated memory */
+    free(xTemp);
+    free(yTemp);
+    printf("The cdist is %f\n", Dst[0]);
+    return Dst[0]; /* Return the first element of the result matrix */
 }

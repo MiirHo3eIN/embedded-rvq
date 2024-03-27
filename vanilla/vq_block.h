@@ -16,7 +16,7 @@ void VectorToMatrixAdd(float32_t *pSrcA, float32_t* pSrcB, float32_t *pDst, int 
 void MatToVectorSum(float32_t *Src, float32_t *Dst,int rowSize, int colSize);
 void VectorToMatrixAdd(float32_t *pSrcA, float32_t* pSrcB, float32_t *pDst, int rowSizeSrcA, int rowSizeSrcB);
 void MatrixAdd(float32_t *SrcA, float32_t *SrcB, float32_t *Dst, int rowSize, int colSize);
-void cdist(float32_t *SrcA, float32_t *SrcB, float32_t *Dst, int rowSizeSrc, int colSizeSrc);
+float32_t cdist(float32_t *SrcA, float32_t *SrcB, int rowSizeSrc, int colSizeSrc);
 
 
 /* Utils Functions */

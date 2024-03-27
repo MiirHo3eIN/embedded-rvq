@@ -50,8 +50,15 @@ This is the one-core simple implementation of the search engine. You can follow 
 **TODO:** The following steps must be done: 
 1. A near real-life case evaluation with floating point values. 
 2. Profiling different sections of the search engine with GAP9 and STM32 devices. 
+    Increase the codebook size while keeping seq lenght or increase seq_len while keeping the codebooksize. 
+    For accuracy, is it better to have a small rather long rvq, increase layers while keep codeword size small
 3. Apply different scenarios to find the best case for parallelization. 
 
+### Code Optimization: 
+
+1. Apply some sort of rule on the codebook to have some in-sight on it. 
+2. Use it before parallelization. 
+**TODO:** Read Papers about it :D    
 
 ### Parallel Version: 
 
