@@ -19,396 +19,105 @@
 
 Entering main controller
 Main script of the vanilla application
-Analysing Input Sample 0
-Result=[14.801349, ];
-The cdist is 14.801349
-cdist: 14.801349	 for codeword 0
- The lowest cdist: 14.801349	 for codeword 0 
-Result=[14.696515, ];
-The cdist is 14.696515
-cdist: 14.696515	 for codeword 1
- The lowest cdist: 14.696515	 for codeword 1 
-Result=[15.228039, ];
-The cdist is 15.228039
-cdist: 15.228039	 for codeword 2
- Result=[13.064725, ];
-The cdist is 13.064725
-cdist: 13.064725	 for codeword 3
- The lowest cdist: 13.064725	 for codeword 3 
-Result=[13.744614, ];
-The cdist is 13.744614
-cdist: 13.744614	 for codeword 4
- Result=[13.787741, ];
-The cdist is 13.787741
-cdist: 13.787741	 for codeword 5
- Result=[14.153056, ];
-The cdist is 14.153056
-cdist: 14.153056	 for codeword 6
- Result=[14.078811, ];
-The cdist is 14.078811
-cdist: 14.078811	 for codeword 7
- Result=[13.665712, ];
-The cdist is 13.665712
-cdist: 13.665712	 for codeword 8
- Result=[15.273657, ];
-The cdist is 15.273657
-cdist: 15.273657	 for codeword 9
- Result=[13.793897, ];
-The cdist is 13.793897
-cdist: 13.793897	 for codeword 10
- Result=[13.634185, ];
-The cdist is 13.634185
-cdist: 13.634185	 for codeword 11
- Result=[13.702469, ];
-The cdist is 13.702469
-cdist: 13.702469	 for codeword 12
- Result=[14.043056, ];
-The cdist is 14.043056
-cdist: 14.043056	 for codeword 13
- Result=[15.586039, ];
-The cdist is 15.586039
-cdist: 15.586039	 for codeword 14
- Result=[16.115534, ];
-The cdist is 16.115534
-cdist: 16.115534	 for codeword 15
- Result=[14.664256, ];
-The cdist is 14.664256
-cdist: 14.664256	 for codeword 16
- Result=[12.717071, ];
-The cdist is 12.717071
-cdist: 12.717071	 for codeword 17
- The lowest cdist: 12.717071	 for codeword 17 
-Result=[13.975453, ];
-The cdist is 13.975453
-cdist: 13.975453	 for codeword 18
- Result=[16.786650, ];
-The cdist is 16.786650
-cdist: 16.786650	 for codeword 19
- Result=[14.230561, ];
-The cdist is 14.230561
-cdist: 14.230561	 for codeword 20
- Result=[14.202739, ];
-The cdist is 14.202739
-cdist: 14.202739	 for codeword 21
- Result=[13.858467, ];
-The cdist is 13.858467
-cdist: 13.858467	 for codeword 22
- Result=[13.284263, ];
-The cdist is 13.284263
-cdist: 13.284263	 for codeword 23
- Result=[14.251844, ];
-The cdist is 14.251844
-cdist: 14.251844	 for codeword 24
- Result=[15.452272, ];
-The cdist is 15.452272
-cdist: 15.452272	 for codeword 25
- Result=[12.852358, ];
-The cdist is 12.852358
-cdist: 12.852358	 for codeword 26
- Result=[12.788478, ];
-The cdist is 12.788478
-cdist: 12.788478	 for codeword 27
- Result=[14.549973, ];
-The cdist is 14.549973
-cdist: 14.549973	 for codeword 28
- Result=[14.983542, ];
-The cdist is 14.983542
-cdist: 14.983542	 for codeword 29
- Result=[12.534463, ];
-The cdist is 12.534463
-cdist: 12.534463	 for codeword 30
- The lowest cdist: 12.534463	 for codeword 30 
-Result=[15.345683, ];
-The cdist is 15.345683
-cdist: 15.345683	 for codeword 31
- Result=[15.216194, ];
-The cdist is 15.216194
-cdist: 15.216194	 for codeword 32
- Result=[12.845061, ];
-The cdist is 12.845061
-cdist: 12.845061	 for codeword 33
- Result=[13.575455, ];
-The cdist is 13.575455
-cdist: 13.575455	 for codeword 34
- Result=[14.860476, ];
-The cdist is 14.860476
-cdist: 14.860476	 for codeword 35
- Result=[15.008060, ];
-The cdist is 15.008060
-cdist: 15.008060	 for codeword 36
- Result=[14.628965, ];
-The cdist is 14.628965
-cdist: 14.628965	 for codeword 37
- Result=[14.720503, ];
-The cdist is 14.720503
-cdist: 14.720503	 for codeword 38
- Result=[15.967075, ];
-The cdist is 15.967075
-cdist: 15.967075	 for codeword 39
- Result=[14.413478, ];
-The cdist is 14.413478
-cdist: 14.413478	 for codeword 40
- Result=[15.061755, ];
-The cdist is 15.061755
-cdist: 15.061755	 for codeword 41
- Result=[14.947517, ];
-The cdist is 14.947517
-cdist: 14.947517	 for codeword 42
- Result=[16.247761, ];
-The cdist is 16.247761
-cdist: 16.247761	 for codeword 43
- Result=[14.617975, ];
-The cdist is 14.617975
-cdist: 14.617975	 for codeword 44
- Result=[15.163701, ];
-The cdist is 15.163701
-cdist: 15.163701	 for codeword 45
- Result=[13.861994, ];
-The cdist is 13.861994
-cdist: 13.861994	 for codeword 46
- Result=[13.820883, ];
-The cdist is 13.820883
-cdist: 13.820883	 for codeword 47
- Result=[14.666413, ];
-The cdist is 14.666413
-cdist: 14.666413	 for codeword 48
- Result=[14.691663, ];
-The cdist is 14.691663
-cdist: 14.691663	 for codeword 49
- Result=[13.766744, ];
-The cdist is 13.766744
-cdist: 13.766744	 for codeword 50
- Result=[15.258394, ];
-The cdist is 15.258394
-cdist: 15.258394	 for codeword 51
- Result=[13.479572, ];
-The cdist is 13.479572
-cdist: 13.479572	 for codeword 52
- Result=[13.749359, ];
-The cdist is 13.749359
-cdist: 13.749359	 for codeword 53
- Result=[14.153498, ];
-The cdist is 14.153498
-cdist: 14.153498	 for codeword 54
- Result=[13.822065, ];
-The cdist is 13.822065
-cdist: 13.822065	 for codeword 55
- Result=[15.457796, ];
-The cdist is 15.457796
-cdist: 15.457796	 for codeword 56
- Result=[13.475697, ];
-The cdist is 13.475697
-cdist: 13.475697	 for codeword 57
- Result=[15.494087, ];
-The cdist is 15.494087
-cdist: 15.494087	 for codeword 58
- Result=[13.661342, ];
-The cdist is 13.661342
-cdist: 13.661342	 for codeword 59
- Result=[14.970874, ];
-The cdist is 14.970874
-cdist: 14.970874	 for codeword 60
- Result=[13.621253, ];
-The cdist is 13.621253
-cdist: 13.621253	 for codeword 61
- Result=[13.796444, ];
-The cdist is 13.796444
-cdist: 13.796444	 for codeword 62
- Result=[14.703937, ];
-The cdist is 14.703937
-cdist: 14.703937	 for codeword 63
- Result=[13.647188, ];
-The cdist is 13.647188
-cdist: 13.647188	 for codeword 64
- Result=[13.070481, ];
-The cdist is 13.070481
-cdist: 13.070481	 for codeword 65
- Result=[13.022926, ];
-The cdist is 13.022926
-cdist: 13.022926	 for codeword 66
- Result=[14.079844, ];
-The cdist is 14.079844
-cdist: 14.079844	 for codeword 67
- Result=[15.096995, ];
-The cdist is 15.096995
-cdist: 15.096995	 for codeword 68
- Result=[15.494989, ];
-The cdist is 15.494989
-cdist: 15.494989	 for codeword 69
- Result=[15.531904, ];
-The cdist is 15.531904
-cdist: 15.531904	 for codeword 70
- Result=[13.416405, ];
-The cdist is 13.416405
-cdist: 13.416405	 for codeword 71
- Result=[14.396482, ];
-The cdist is 14.396482
-cdist: 14.396482	 for codeword 72
- Result=[13.939643, ];
-The cdist is 13.939643
-cdist: 13.939643	 for codeword 73
- Result=[13.464911, ];
-The cdist is 13.464911
-cdist: 13.464911	 for codeword 74
- Result=[14.843673, ];
-The cdist is 14.843673
-cdist: 14.843673	 for codeword 75
- Result=[15.727091, ];
-The cdist is 15.727091
-cdist: 15.727091	 for codeword 76
- Result=[14.068019, ];
-The cdist is 14.068019
-cdist: 14.068019	 for codeword 77
- Result=[13.591455, ];
-The cdist is 13.591455
-cdist: 13.591455	 for codeword 78
- Result=[16.056860, ];
-The cdist is 16.056860
-cdist: 16.056860	 for codeword 79
- Result=[15.208020, ];
-The cdist is 15.208020
-cdist: 15.208020	 for codeword 80
- Result=[14.349989, ];
-The cdist is 14.349989
-cdist: 14.349989	 for codeword 81
- Result=[14.197511, ];
-The cdist is 14.197511
-cdist: 14.197511	 for codeword 82
- Result=[13.890279, ];
-The cdist is 13.890279
-cdist: 13.890279	 for codeword 83
- Result=[14.478252, ];
-The cdist is 14.478252
-cdist: 14.478252	 for codeword 84
- Result=[14.984067, ];
-The cdist is 14.984067
-cdist: 14.984067	 for codeword 85
- Result=[14.400466, ];
-The cdist is 14.400466
-cdist: 14.400466	 for codeword 86
- Result=[13.747966, ];
-The cdist is 13.747966
-cdist: 13.747966	 for codeword 87
- Result=[13.454484, ];
-The cdist is 13.454484
-cdist: 13.454484	 for codeword 88
- Result=[15.305268, ];
-The cdist is 15.305268
-cdist: 15.305268	 for codeword 89
- Result=[15.050030, ];
-The cdist is 15.050030
-cdist: 15.050030	 for codeword 90
- Result=[14.158689, ];
-The cdist is 14.158689
-cdist: 14.158689	 for codeword 91
- Result=[14.441182, ];
-The cdist is 14.441182
-cdist: 14.441182	 for codeword 92
- Result=[14.823104, ];
-The cdist is 14.823104
-cdist: 14.823104	 for codeword 93
- Result=[14.050626, ];
-The cdist is 14.050626
-cdist: 14.050626	 for codeword 94
- Result=[15.819866, ];
-The cdist is 15.819866
-cdist: 15.819866	 for codeword 95
- Result=[14.079446, ];
-The cdist is 14.079446
-cdist: 14.079446	 for codeword 96
- Result=[15.585265, ];
-The cdist is 15.585265
-cdist: 15.585265	 for codeword 97
- Result=[12.633719, ];
-The cdist is 12.633719
-cdist: 12.633719	 for codeword 98
- Result=[14.847522, ];
-The cdist is 14.847522
-cdist: 14.847522	 for codeword 99
- Result=[14.363092, ];
-The cdist is 14.363092
-cdist: 14.363092	 for codeword 100
- Result=[13.975851, ];
-The cdist is 13.975851
-cdist: 13.975851	 for codeword 101
- Result=[14.996439, ];
-The cdist is 14.996439
-cdist: 14.996439	 for codeword 102
- Result=[14.389771, ];
-The cdist is 14.389771
-cdist: 14.389771	 for codeword 103
- Result=[15.199505, ];
-The cdist is 15.199505
-cdist: 15.199505	 for codeword 104
- Result=[15.458607, ];
-The cdist is 15.458607
-cdist: 15.458607	 for codeword 105
- Result=[15.054547, ];
-The cdist is 15.054547
-cdist: 15.054547	 for codeword 106
- Result=[15.706553, ];
-The cdist is 15.706553
-cdist: 15.706553	 for codeword 107
- Result=[14.695826, ];
-The cdist is 14.695826
-cdist: 14.695826	 for codeword 108
- Result=[14.717046, ];
-The cdist is 14.717046
-cdist: 14.717046	 for codeword 109
- Result=[15.885709, ];
-The cdist is 15.885709
-cdist: 15.885709	 for codeword 110
- Result=[13.531919, ];
-The cdist is 13.531919
-cdist: 13.531919	 for codeword 111
- Result=[13.219443, ];
-The cdist is 13.219443
-cdist: 13.219443	 for codeword 112
- Result=[15.089441, ];
-The cdist is 15.089441
-cdist: 15.089441	 for codeword 113
- Result=[15.217695, ];
-The cdist is 15.217695
-cdist: 15.217695	 for codeword 114
- Result=[13.729581, ];
-The cdist is 13.729581
-cdist: 13.729581	 for codeword 115
- Result=[14.172349, ];
-The cdist is 14.172349
-cdist: 14.172349	 for codeword 116
- Result=[14.060359, ];
-The cdist is 14.060359
-cdist: 14.060359	 for codeword 117
- Result=[14.346416, ];
-The cdist is 14.346416
-cdist: 14.346416	 for codeword 118
- Result=[13.122094, ];
-The cdist is 13.122094
-cdist: 13.122094	 for codeword 119
- Result=[14.699075, ];
-The cdist is 14.699075
-cdist: 14.699075	 for codeword 120
- Result=[14.634134, ];
-The cdist is 14.634134
-cdist: 14.634134	 for codeword 121
- Result=[13.814919, ];
-The cdist is 13.814919
-cdist: 13.814919	 for codeword 122
- Result=[14.567924, ];
-The cdist is 14.567924
-cdist: 14.567924	 for codeword 123
- Result=[14.441117, ];
-The cdist is 14.441117
-cdist: 14.441117	 for codeword 124
- Result=[13.645207, ];
-The cdist is 13.645207
-cdist: 13.645207	 for codeword 125
- Result=[13.855180, ];
-The cdist is 13.855180
-cdist: 13.855180	 for codeword 126
- Result=[13.745153, ];
-The cdist is 13.745153
-cdist: 13.745153	 for codeword 127
- Sample=[-0.061644, -1.055815, -0.269982, -1.338111, -1.821890, -0.983349, -0.686307, 1.275173, -1.641179, 0.766491, 0.758476, 0.640704, -2.352817, 0.410364, -0.119727, -0.346817, 0.849762, -0.960538, -0.279848, -0.440847, 0.379924, 0.001812, 0.348871, -0.133717, -0.482826, -1.340844, -1.030717, -2.019260, -2.389936, 0.612154, 1.473681, 0.037457, -2.153356, -0.611692, 0.321446, 0.238059, 1.851024, 0.043775, 1.416557, -0.759608, -0.473186, 0.093440, 0.546124, 0.589845, 0.222365, -0.014672, -0.266469, 0.885388, -0.254869, -0.567787, 0.161053, 1.763541, 0.829183, 1.206063, -0.114789, 0.790435, 0.211512, 0.373902, -0.265112, 1.124064, 0.664538, 0.744691, -1.418981, 1.622287, -0.656564, -0.730795, -1.850167, -1.767955, -1.225448, -0.021048, -0.019062, -1.269620, -0.231729, -1.119588, -1.866889, 3.353045, -1.415432, -0.565172, 0.634298, -0.455321, -0.601463, 0.264551, -1.290490, -1.177243, -1.153349, -0.525430, 0.495062, 0.735111, 0.215140, 0.466671, -0.210263, 0.389195, -1.038600, 1.179552, -0.642997, -0.135147, 0.086032, -0.282686, 0.625737, -1.044619, ];
+Sample 0:	 The lowest cdist= 12.534463	 for codeword 30
+Sample 1:	 The lowest cdist= 10.954397	 for codeword 111
+Sample 2:	 The lowest cdist= 11.856223	 for codeword 96
+Sample 3:	 The lowest cdist= 12.836723	 for codeword 12
+Sample 4:	 The lowest cdist= 11.233165	 for codeword 26
+Sample 5:	 The lowest cdist= 11.824022	 for codeword 103
+Sample 6:	 The lowest cdist= 9.956474	 	 for codeword 12
+Sample 7:	 The lowest cdist= 11.400371	 for codeword 5
+Sample 8:	 The lowest cdist= 12.671700	 for codeword 53
+Sample 9:	 The lowest cdist= 11.807158	 for codeword 124
+Sample 10:	 The lowest cdist= 11.777987	 for codeword 83
+Sample 11:	 The lowest cdist= 11.387630	 for codeword 11
+Sample 12:	 The lowest cdist= 12.215476	 for codeword 5
+Sample 13:	 The lowest cdist= 11.510034	 for codeword 55
+Sample 14:	 The lowest cdist= 10.834514	 for codeword 33
+Sample 15:	 The lowest cdist= 12.293641	 for codeword 12
+Sample 16:	 The lowest cdist= 11.930705	 for codeword 32
+Sample 17:	 The lowest cdist= 11.846428	 for codeword 27
+Sample 18:	 The lowest cdist= 11.010230	 for codeword 22
+Sample 19:	 The lowest cdist= 12.929828	 for codeword 74
+Sample 20:	 The lowest cdist= 11.498922	 for codeword 0
+Sample 21:	 The lowest cdist= 11.718112	 for codeword 86
+Sample 22:	 The lowest cdist= 12.978745	 for codeword 98
+Sample 23:	 The lowest cdist= 11.117437	 for codeword 13
+Sample 24:	 The lowest cdist= 11.411687	 for codeword 26
+Sample 25:	 The lowest cdist= 11.934512	 for codeword 121
+Sample 26:	 The lowest cdist= 11.585727	 for codeword 86
+Sample 27:	 The lowest cdist= 12.542452	 for codeword 124
+Sample 28:	 The lowest cdist= 13.157756	 for codeword 13
+Sample 29:	 The lowest cdist= 12.165842	 for codeword 115
+Sample 30:	 The lowest cdist= 12.361286	 for codeword 55
+Sample 31:	 The lowest cdist= 12.084114	 for codeword 27
+Sample 32:	 The lowest cdist= 12.221158	 for codeword 86
+Sample 33:	 The lowest cdist= 11.824566	 for codeword 33
+Sample 34:	 The lowest cdist= 11.894999	 for codeword 21
+Sample 35:	 The lowest cdist= 11.983720	 for codeword 30
+Sample 36:	 The lowest cdist= 11.056502	 for codeword 53
+Sample 37:	 The lowest cdist= 11.411771	 for codeword 13
+Sample 38:	 The lowest cdist= 12.863110	 for codeword 22
+Sample 39:	 The lowest cdist= 12.552430	 for codeword 108
+Sample 40:	 The lowest cdist= 11.597589	 for codeword 100
+Sample 41:	 The lowest cdist= 11.735441	 for codeword 11
+Sample 42:	 The lowest cdist= 12.322068	 for codeword 59
+Sample 43:	 The lowest cdist= 12.193270	 for codeword 74
+Sample 44:	 The lowest cdist= 12.138738	 for codeword 10
+Sample 45:	 The lowest cdist= 12.203340	 for codeword 108
+Sample 46:	 The lowest cdist= 12.614002	 for codeword 93
+Sample 47:	 The lowest cdist= 12.206228	 for codeword 66
+Sample 48:	 The lowest cdist= 11.481408	 for codeword 67
+Sample 49:	 The lowest cdist= 11.689263	 for codeword 28
+Sample 50:	 The lowest cdist= 12.219360	 for codeword 98
+Sample 51:	 The lowest cdist= 11.865827	 for codeword 27
+Sample 52:	 The lowest cdist= 12.483232	 for codeword 83
+Sample 53:	 The lowest cdist= 11.275492	 for codeword 27
+Sample 54:	 The lowest cdist= 11.825430	 for codeword 16
+Sample 55:	 The lowest cdist= 11.963642	 for codeword 45
+Sample 56:	 The lowest cdist= 11.407826	 for codeword 29
+Sample 57:	 The lowest cdist= 11.948172	 for codeword 101
+Sample 58:	 The lowest cdist= 12.533345	 for codeword 13
+Sample 59:	 The lowest cdist= 11.519304	 for codeword 66
+Sample 60:	 The lowest cdist= 12.973862	 for codeword 45
+Sample 61:	 The lowest cdist= 12.573655	 for codeword 29
+Sample 62:	 The lowest cdist= 11.975018	 for codeword 13
+Sample 63:	 The lowest cdist= 11.860281	 for codeword 3
+Sample 64:	 The lowest cdist= 12.196275	 for codeword 57
+Sample 65:	 The lowest cdist= 11.734650	 for codeword 104
+Sample 66:	 The lowest cdist= 12.051443	 for codeword 27
+Sample 67:	 The lowest cdist= 12.696430	 for codeword 52
+Sample 68:	 The lowest cdist= 11.845188	 for codeword 86
+Sample 69:	 The lowest cdist= 12.555399	 for codeword 127
+Sample 70:	 The lowest cdist= 12.162630	 for codeword 121
+Sample 71:	 The lowest cdist= 12.128078	 for codeword 27
+Sample 72:	 The lowest cdist= 11.536044	 for codeword 27
+Sample 73:	 The lowest cdist= 11.302318	 for codeword 111
+Sample 74:	 The lowest cdist= 12.211296	 for codeword 53
+Sample 75:	 The lowest cdist= 12.373731	 for codeword 52
+Sample 76:	 The lowest cdist= 13.149314	 for codeword 87
+Sample 77:	 The lowest cdist= 12.620127	 for codeword 11
+Sample 78:	 The lowest cdist= 13.058787	 for codeword 125
+Sample 79:	 The lowest cdist= 11.461176	 for codeword 17
+Sample 80:	 The lowest cdist= 12.085965	 for codeword 2
+Sample 81:	 The lowest cdist= 11.879655	 for codeword 57
+Sample 82:	 The lowest cdist= 11.770755	 for codeword 13
+Sample 83:	 The lowest cdist= 11.419389	 for codeword 108
+Sample 84:	 The lowest cdist= 11.608943	 for codeword 71
+Sample 85:	 The lowest cdist= 12.088850	 for codeword 40
+Sample 86:	 The lowest cdist= 11.303727	 for codeword 53
+Sample 87:	 The lowest cdist= 11.505466	 for codeword 17
+Sample 88:	 The lowest cdist= 11.557559	 for codeword 21
+Sample 89:	 The lowest cdist= 12.145214	 for codeword 30
+Sample 90:	 The lowest cdist= 11.860216	 for codeword 104
+Sample 91:	 The lowest cdist= 11.911098	 for codeword 20
+Sample 92:	 The lowest cdist= 10.988622	 for codeword 74
+Sample 93:	 The lowest cdist= 11.642709	 for codeword 22
+Sample 94:	 The lowest cdist= 13.035616	 for codeword 64
+Sample 95:	 The lowest cdist= 12.489362	 for codeword 86
+Sample 96:	 The lowest cdist= 11.556314	 for codeword 115
+Sample 97:	 The lowest cdist= 12.801210	 for codeword 59
+Sample 98:	 The lowest cdist= 10.786445	 for codeword 27
+Sample 99:	 The lowest cdist= 11.518725	 for codeword 93
 Bye !
 [100%] Built target run

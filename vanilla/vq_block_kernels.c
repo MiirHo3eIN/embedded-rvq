@@ -187,10 +187,10 @@ float32_t cdist(float32_t *SrcA, float32_t *SrcB, int rowSizeSrc, int colSizeSrc
     // MatrixPrint(sumResult, "SumResult", rowSizeSrc, rowSizeSrc);    
     /* Add the result of matrix multiplication and sum of x and y */
     MatrixAdd(Dst, sumResult, Dst, rowSizeSrc, rowSizeSrc); /* -2xy + x + y */
-    MatrixPrint(Dst, "Result", rowSizeSrc, rowSizeSrc); /* -2xy + x + y */
+    // MatrixPrint(Dst, "Result", rowSizeSrc, rowSizeSrc); /* -2xy + x + y */
     /* Free the allocated memory */
     free(xTemp);
     free(yTemp);
-    printf("The cdist is %f\n", Dst[0]);
+    // printf("The cdist is %f\n", Dst[0]);
     return Dst[0]; /* Return the first element of the result matrix */
 }

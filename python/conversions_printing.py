@@ -27,14 +27,16 @@ if __name__ == '__main__':
 
     print(input)
     print("*"*100)
-    print(dists)
+    print(dists.shape)
     print(dists[0, 0, :])
-    print(np.argmin(dists, axis = -1))
+    min_idx = np.argmin(dists, axis = -1)
+    for indx, val in enumerate(min_idx):
+        print(f"Sample {indx}:\t The lowest distance= {dists[indx, 0, val]}\t for codeword {val}")
 
     # Here we treat the inputs sepearately as a given input has dimension of [1x100]
     # Further, the codebook will be a 2D matrix in which we will have 128 rows and 100 columns
 
-    npy2Carray(input[:, 0, :], 'input', 'inputs.h', mode = 'w', fmt = '{}', ifndef = False)
+    # npy2Carray(input[:, 0, :], 'input', 'inputs.h', mode = 'w', fmt = '{}', ifndef = False)
 
     # for idx in range(input.shape[0]):
     #     if idx == 0:
@@ -42,4 +44,4 @@ if __name__ == '__main__':
     #     else: 
     #         npy2Carray(input[:, 0, :], f'input_{idx}', f'c_samples/inputs.h', mode = 'a', fmt = '{}', ifndef = False)
     # npy2Carray(input[0, 0, :], 'input', 'input.h', mode = 'w', fmt = '{}', ifndef = False)
-    npy2Carray(codebook[0, :, :], 'codebook', 'codebook.h', mode = 'w', fmt = '{}', ifndef = False)
+    # npy2Carray(codebook[0, :, :], 'codebook', 'codebook.h', mode = 'w', fmt = '{}', ifndef = False)
