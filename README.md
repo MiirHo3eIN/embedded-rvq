@@ -48,7 +48,6 @@ This is the one-core simple implementation of the search engine. You can follow 
 </br>
 
 **TODO:** The following steps must be done: 
-1. A near real-life case evaluation with floating point values. 
 2. Profiling different sections of the search engine with GAP9 and STM32 devices. 
     Increase the codebook size while keeping seq lenght or increase seq_len while keeping the codebooksize. 
     For accuracy, is it better to have a small rather long rvq, increase layers while keep codeword size small
