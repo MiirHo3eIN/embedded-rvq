@@ -1,834 +1,665 @@
-[  3%] Built target freertos_printf
-[  7%] Built target bsp
-[ 40%] Built target pmsis_implem
-[ 44%] Built target ri5cy-gap9
-[ 50%] Built target freertos_libs
-[ 53%] Built target freertos_pmsis_backend
-[ 67%] Built target pmsis_rtos
-[ 78%] Built target freertos_gap9
-[ 81%] Built target dt
-[ 93%] Built target freertos
-[ 95%] Building C object CMakeFiles/main_vq.dir/vq_block_kernels.c.obj
-[ 96%] Linking C executable main_vq
+[  2%] Built target freertos_printf
+[ 11%] Built target bsp
+[ 42%] Built target pmsis_implem
+[ 47%] Built target ri5cy-gap9
+[ 52%] Built target freertos_libs
+[ 55%] Built target freertos_pmsis_backend
+[ 69%] Built target pmsis_rtos
+[ 79%] Built target freertos_gap9
+[ 82%] Built target dt
+[ 94%] Built target freertos
+[ 95%] Building C object CMakeFiles/main_vq.dir/main_vq.c.obj
+[ 97%] Building C object CMakeFiles/main_vq.dir/vq_block_kernels.c.obj
+[ 98%] Linking C executable main_vq
 [100%] Built target main_vq
 [100%] Built target image
-TAP: gap9.riscv
-
-TAP: gap9.pulp
-
-jtag init
-ret1=00000000
-ret2=00000000
-ret1=00000000
-ret=03
---------------------------
-begining flash session
---------------------------
-load flasher to L2 memory
-[Flasher]: MRAM flasher entry
-[Flasher]: MRAM flasher is ready
-Instruct flasher to begin flash per se
-device struct address is 0x1c018540
-going to wait on addr GAP_RDY
-
-loading image to flash - addr 0x1c01adc8 - copied 32768 / 168400 Bytes - 19.46 %
-loading image to flash - addr 0x1c012dc8 - copied 65536 / 168400 Bytes - 38.92 %
-loading image to flash - addr 0x1c00adc8 - copied 98304 / 168400 Bytes - 58.38 %
-loading image to flash - addr 0x1c002dc8 - copied 131072 / 168400 Bytes - 77.83 %
-loading image to flash - addr 0x1bffadc8 - copied 163840 / 168400 Bytes - 97.29 %
-loading image to flash - addr 0x1bff2dc8 - copied 168400 / 168400 Bytes - 100.00 %[Flasher]: flasher is done
-flasher is done, exiting
---------------------------
-flasher is done!
---------------------------
-Flashing image with command:
-openocd -c "gdb_port disabled; telnet_port disabled; tcl_port disabled" -f "/home/miir_ho3ein/projects/pulp/gap9/gap_sdk_private/utils/openocd/tcl/interface/ftdi/olimex-arm-usb-ocd-h.cfg" -f "/home/miir_ho3ein/projects/pulp/gap9/gap_sdk_private/utils/openocd_tools/tcl/gap9revb.tcl" -f "/home/miir_ho3ein/projects/pulp/gap9/gap_sdk_private/utils/openocd_tools/tcl/flash_image.tcl" -c "gap9_flash_raw /home/miir_ho3ein/projects/pulp/applications/embedded-rvq/vanilla/build/mram.bin 168400 /home/miir_ho3ein/projects/pulp/gap9/gap_sdk_private/utils/openocd_tools/gap_bins/gap_flasher-gap9_evk-mram.elf 0x8000; exit;"
 [100%] Built target flash
-TAP: gap9.riscv
-
-TAP: gap9.pulp
-
-jtag init
-ret1=00000000
-ret2=00000000
-ret1=00000000
-ret=03
 
 
 	 *** PMSIS HelloWorld ***
 
 Entering main controller
 Main script of the vanilla application
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 929 cycles Timer : 949 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 168 cycles Timer : 194 cycles
-Performance of the dist func : 168 cycles Timer : 194 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1714 cycles Timer : 1740 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1714 cycles Timer : 1740 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 168 cycles Timer : 194 cycles
-Performance of the dist func : 168 cycles Timer : 194 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 168 cycles Timer : 194 cycles
-Performance of the dist func : 168 cycles Timer : 194 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1720 cycles Timer : 1746 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1713 cycles Timer : 1739 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 175 cycles Timer : 201 cycles
-Performance of the dist func : 175 cycles Timer : 201 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1707 cycles Timer : 1733 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1713 cycles Timer : 1739 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 189 cycles
-Performance of the dist func : 163 cycles Timer : 189 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1707 cycles Timer : 1733 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1707 cycles Timer : 1733 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 168 cycles Timer : 194 cycles
-Performance of the dist func : 168 cycles Timer : 194 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 168 cycles Timer : 194 cycles
-Performance of the dist func : 168 cycles Timer : 194 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1720 cycles Timer : 1746 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 168 cycles Timer : 194 cycles
-Performance of the dist func : 168 cycles Timer : 194 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 168 cycles Timer : 194 cycles
-Performance of the dist func : 168 cycles Timer : 194 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1713 cycles Timer : 1739 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 168 cycles Timer : 194 cycles
-Performance of the dist func : 168 cycles Timer : 194 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 175 cycles Timer : 201 cycles
-Performance of the dist func : 175 cycles Timer : 201 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1707 cycles Timer : 1733 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 168 cycles Timer : 194 cycles
-Performance of the dist func : 168 cycles Timer : 194 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1713 cycles Timer : 1739 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 189 cycles
-Performance of the dist func : 163 cycles Timer : 189 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1707 cycles Timer : 1733 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 929 cycles Timer : 949 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 929 cycles Timer : 949 cycles
-Performance of the two MatToVector func : 1708 cycles Timer : 1734 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 174 cycles Timer : 200 cycles
-Performance of the dist func : 174 cycles Timer : 200 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 168 cycles Timer : 194 cycles
-Performance of the dist func : 168 cycles Timer : 194 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 175 cycles Timer : 201 cycles
-Performance of the dist func : 175 cycles Timer : 201 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1720 cycles Timer : 1746 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 929 cycles Timer : 949 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1713 cycles Timer : 1739 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1708 cycles Timer : 1734 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 168 cycles Timer : 194 cycles
-Performance of the dist func : 168 cycles Timer : 194 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 189 cycles
-Performance of the dist func : 163 cycles Timer : 189 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 929 cycles Timer : 949 cycles
-Performance of the two MatToVector func : 1708 cycles Timer : 1734 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 168 cycles Timer : 194 cycles
-Performance of the dist func : 168 cycles Timer : 194 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 929 cycles Timer : 949 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 929 cycles Timer : 949 cycles
-Performance of the two MatToVector func : 1707 cycles Timer : 1733 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 168 cycles Timer : 194 cycles
-Performance of the dist func : 168 cycles Timer : 194 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1707 cycles Timer : 1733 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 168 cycles Timer : 194 cycles
-Performance of the dist func : 168 cycles Timer : 194 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1713 cycles Timer : 1739 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 174 cycles Timer : 200 cycles
-Performance of the dist func : 174 cycles Timer : 200 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1707 cycles Timer : 1733 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1713 cycles Timer : 1739 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 189 cycles
-Performance of the dist func : 163 cycles Timer : 189 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 168 cycles Timer : 194 cycles
-Performance of the dist func : 168 cycles Timer : 194 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1707 cycles Timer : 1733 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 168 cycles Timer : 194 cycles
-Performance of the dist func : 168 cycles Timer : 194 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1707 cycles Timer : 1733 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1720 cycles Timer : 1746 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1713 cycles Timer : 1739 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1708 cycles Timer : 1734 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 162 cycles Timer : 188 cycles
-Performance of the dist func : 162 cycles Timer : 188 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1714 cycles Timer : 1740 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1708 cycles Timer : 1734 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 168 cycles Timer : 194 cycles
-Performance of the dist func : 168 cycles Timer : 194 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 929 cycles Timer : 949 cycles
-Performance of the two MatToVector func : 1707 cycles Timer : 1733 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 929 cycles Timer : 949 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 174 cycles Timer : 200 cycles
-Performance of the dist func : 174 cycles Timer : 200 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 929 cycles Timer : 949 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 162 cycles Timer : 188 cycles
-Performance of the dist func : 162 cycles Timer : 188 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 929 cycles Timer : 949 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 175 cycles Timer : 201 cycles
-Performance of the dist func : 175 cycles Timer : 201 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1714 cycles Timer : 1740 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 168 cycles Timer : 194 cycles
-Performance of the dist func : 168 cycles Timer : 194 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 174 cycles Timer : 200 cycles
-Performance of the dist func : 174 cycles Timer : 200 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 929 cycles Timer : 949 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 175 cycles Timer : 201 cycles
-Performance of the dist func : 175 cycles Timer : 201 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 929 cycles Timer : 949 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 189 cycles
-Performance of the dist func : 163 cycles Timer : 189 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 929 cycles Timer : 949 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 175 cycles Timer : 201 cycles
-Performance of the dist func : 175 cycles Timer : 201 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 168 cycles Timer : 194 cycles
-Performance of the dist func : 168 cycles Timer : 194 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1714 cycles Timer : 1740 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 175 cycles Timer : 201 cycles
-Performance of the dist func : 175 cycles Timer : 201 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 929 cycles Timer : 949 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 174 cycles Timer : 200 cycles
-Performance of the dist func : 174 cycles Timer : 200 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 929 cycles Timer : 949 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 162 cycles Timer : 188 cycles
-Performance of the dist func : 162 cycles Timer : 188 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 929 cycles Timer : 949 cycles
-Performance of the two MatToVector func : 1708 cycles Timer : 1734 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 162 cycles Timer : 188 cycles
-Performance of the dist func : 162 cycles Timer : 188 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 929 cycles Timer : 949 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 189 cycles
-Performance of the dist func : 163 cycles Timer : 189 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 168 cycles Timer : 194 cycles
-Performance of the dist func : 168 cycles Timer : 194 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1714 cycles Timer : 1740 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 168 cycles Timer : 194 cycles
-Performance of the dist func : 168 cycles Timer : 194 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 929 cycles Timer : 949 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 174 cycles Timer : 200 cycles
-Performance of the dist func : 174 cycles Timer : 200 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 929 cycles Timer : 949 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 175 cycles Timer : 201 cycles
-Performance of the dist func : 175 cycles Timer : 201 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 189 cycles
-Performance of the dist func : 163 cycles Timer : 189 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 929 cycles Timer : 949 cycles
-Performance of the two MatToVector func : 1707 cycles Timer : 1733 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1707 cycles Timer : 1733 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1713 cycles Timer : 1739 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 175 cycles Timer : 201 cycles
-Performance of the dist func : 175 cycles Timer : 201 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1707 cycles Timer : 1733 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1713 cycles Timer : 1739 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 162 cycles Timer : 188 cycles
-Performance of the dist func : 162 cycles Timer : 188 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 168 cycles Timer : 194 cycles
-Performance of the dist func : 168 cycles Timer : 194 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1707 cycles Timer : 1733 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 168 cycles Timer : 194 cycles
-Performance of the dist func : 168 cycles Timer : 194 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1707 cycles Timer : 1733 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 168 cycles Timer : 194 cycles
-Performance of the dist func : 168 cycles Timer : 194 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1720 cycles Timer : 1746 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 189 cycles
-Performance of the dist func : 163 cycles Timer : 189 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 929 cycles Timer : 949 cycles
-Performance of the two MatToVector func : 1714 cycles Timer : 1740 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 168 cycles Timer : 194 cycles
-Performance of the dist func : 168 cycles Timer : 194 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 929 cycles Timer : 949 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 168 cycles Timer : 194 cycles
-Performance of the dist func : 168 cycles Timer : 194 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 175 cycles Timer : 201 cycles
-Performance of the dist func : 175 cycles Timer : 201 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1720 cycles Timer : 1746 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 929 cycles Timer : 949 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1713 cycles Timer : 1739 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1708 cycles Timer : 1734 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 168 cycles Timer : 194 cycles
-Performance of the dist func : 168 cycles Timer : 194 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 189 cycles
-Performance of the dist func : 163 cycles Timer : 189 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 929 cycles Timer : 949 cycles
-Performance of the two MatToVector func : 1708 cycles Timer : 1734 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 168 cycles Timer : 194 cycles
-Performance of the dist func : 168 cycles Timer : 194 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 929 cycles Timer : 949 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 732 cycles Timer : 757 cycles
-Performance of the MatMul func : 929 cycles Timer : 949 cycles
-Performance of the two MatToVector func : 1707 cycles Timer : 1733 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 168 cycles Timer : 194 cycles
-Performance of the dist func : 168 cycles Timer : 194 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1707 cycles Timer : 1733 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 168 cycles Timer : 194 cycles
-Performance of the dist func : 168 cycles Timer : 194 cycles
-Performance of the Transpose func : 739 cycles Timer : 764 cycles
-Performance of the MatMul func : 923 cycles Timer : 943 cycles
-Performance of the two MatToVector func : 1701 cycles Timer : 1727 cycles
-Performance of the VectorToMatAdd func : 88 cycles Timer : 114 cycles
-Performance of the MatrixAdd_W_SQRT func : 169 cycles Timer : 195 cycles
-Performance of the dist func : 169 cycles Timer : 195 cycles
+Performance of the Transpose func : 666 cycles Timer : 694 cycles
+Performance of the MatMul func : 822 cycles Timer : 839 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1717 cycles
+Performance of the VectorToMatAdd func : 68 cycles Timer : 85 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 174 cycles
+Performance of the Transpose func : 666 cycles Timer : 688 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1694 cycles Timer : 1722 cycles
+Performance of the VectorToMatAdd func : 80 cycles Timer : 97 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 666 cycles Timer : 689 cycles
+Performance of the MatMul func : 822 cycles Timer : 844 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1728 cycles
+Performance of the VectorToMatAdd func : 80 cycles Timer : 97 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 179 cycles
+Performance of the Transpose func : 666 cycles Timer : 689 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1694 cycles Timer : 1711 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 91 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 666 cycles Timer : 683 cycles
+Performance of the MatMul func : 822 cycles Timer : 844 cycles
+Performance of the two MatToVector func : 1694 cycles Timer : 1711 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 91 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 174 cycles
+Performance of the Transpose func : 666 cycles Timer : 694 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1694 cycles Timer : 1722 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 91 cycles
+Performance of the MatrixAdd_W_SQRT func : 151 cycles Timer : 168 cycles
+Performance of the Transpose func : 660 cycles Timer : 677 cycles
+Performance of the MatMul func : 822 cycles Timer : 839 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1717 cycles
+Performance of the VectorToMatAdd func : 86 cycles Timer : 103 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 174 cycles
+Performance of the Transpose func : 672 cycles Timer : 695 cycles
+Performance of the MatMul func : 834 cycles Timer : 856 cycles
+Performance of the two MatToVector func : 1694 cycles Timer : 1722 cycles
+Performance of the VectorToMatAdd func : 86 cycles Timer : 109 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 191 cycles
+Performance of the Transpose func : 660 cycles Timer : 677 cycles
+Performance of the MatMul func : 822 cycles Timer : 844 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1717 cycles
+Performance of the VectorToMatAdd func : 80 cycles Timer : 102 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 174 cycles
+Performance of the Transpose func : 660 cycles Timer : 682 cycles
+Performance of the MatMul func : 834 cycles Timer : 862 cycles
+Performance of the two MatToVector func : 1694 cycles Timer : 1717 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 91 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 174 cycles
+Performance of the Transpose func : 666 cycles Timer : 683 cycles
+Performance of the MatMul func : 834 cycles Timer : 856 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1728 cycles
+Performance of the VectorToMatAdd func : 80 cycles Timer : 97 cycles
+Performance of the MatrixAdd_W_SQRT func : 151 cycles Timer : 168 cycles
+Performance of the Transpose func : 660 cycles Timer : 682 cycles
+Performance of the MatMul func : 822 cycles Timer : 844 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1728 cycles
+Performance of the VectorToMatAdd func : 80 cycles Timer : 103 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 672 cycles Timer : 700 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1728 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 91 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 666 cycles Timer : 694 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1722 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 96 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 666 cycles Timer : 683 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1722 cycles
+Performance of the VectorToMatAdd func : 80 cycles Timer : 102 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 179 cycles
+Performance of the Transpose func : 672 cycles Timer : 694 cycles
+Performance of the MatMul func : 822 cycles Timer : 844 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1717 cycles
+Performance of the VectorToMatAdd func : 80 cycles Timer : 108 cycles
+Performance of the MatrixAdd_W_SQRT func : 151 cycles Timer : 168 cycles
+Performance of the Transpose func : 666 cycles Timer : 688 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1722 cycles
+Performance of the VectorToMatAdd func : 68 cycles Timer : 85 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 174 cycles
+Performance of the Transpose func : 666 cycles Timer : 683 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1728 cycles
+Performance of the VectorToMatAdd func : 62 cycles Timer : 90 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 666 cycles Timer : 683 cycles
+Performance of the MatMul func : 834 cycles Timer : 856 cycles
+Performance of the two MatToVector func : 1694 cycles Timer : 1716 cycles
+Performance of the VectorToMatAdd func : 86 cycles Timer : 103 cycles
+Performance of the MatrixAdd_W_SQRT func : 151 cycles Timer : 168 cycles
+Performance of the Transpose func : 660 cycles Timer : 682 cycles
+Performance of the MatMul func : 822 cycles Timer : 839 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1723 cycles
+Performance of the VectorToMatAdd func : 80 cycles Timer : 97 cycles
+Performance of the MatrixAdd_W_SQRT func : 151 cycles Timer : 168 cycles
+Performance of the Transpose func : 660 cycles Timer : 683 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1688 cycles Timer : 1705 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 91 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 186 cycles
+Performance of the Transpose func : 666 cycles Timer : 683 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1728 cycles
+Performance of the VectorToMatAdd func : 80 cycles Timer : 97 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 666 cycles Timer : 683 cycles
+Performance of the MatMul func : 822 cycles Timer : 844 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1717 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 91 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 678 cycles Timer : 700 cycles
+Performance of the MatMul func : 834 cycles Timer : 862 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1728 cycles
+Performance of the VectorToMatAdd func : 86 cycles Timer : 109 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 186 cycles
+Performance of the Transpose func : 666 cycles Timer : 694 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1722 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 91 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 174 cycles
+Performance of the Transpose func : 666 cycles Timer : 683 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1694 cycles Timer : 1711 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 91 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 666 cycles Timer : 694 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1694 cycles Timer : 1711 cycles
+Performance of the VectorToMatAdd func : 86 cycles Timer : 103 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 666 cycles Timer : 689 cycles
+Performance of the MatMul func : 834 cycles Timer : 856 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1723 cycles
+Performance of the VectorToMatAdd func : 68 cycles Timer : 91 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 660 cycles Timer : 682 cycles
+Performance of the MatMul func : 816 cycles Timer : 838 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1717 cycles
+Performance of the VectorToMatAdd func : 86 cycles Timer : 114 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 185 cycles
+Performance of the Transpose func : 672 cycles Timer : 695 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1723 cycles
+Performance of the VectorToMatAdd func : 80 cycles Timer : 97 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 174 cycles
+Performance of the Transpose func : 672 cycles Timer : 695 cycles
+Performance of the MatMul func : 816 cycles Timer : 838 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1723 cycles
+Performance of the VectorToMatAdd func : 68 cycles Timer : 91 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 666 cycles Timer : 688 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1723 cycles
+Performance of the VectorToMatAdd func : 80 cycles Timer : 103 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 174 cycles
+Performance of the Transpose func : 672 cycles Timer : 695 cycles
+Performance of the MatMul func : 822 cycles Timer : 844 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1728 cycles
+Performance of the VectorToMatAdd func : 80 cycles Timer : 103 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 174 cycles
+Performance of the Transpose func : 660 cycles Timer : 682 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1694 cycles Timer : 1717 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 97 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 666 cycles Timer : 694 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1688 cycles Timer : 1705 cycles
+Performance of the VectorToMatAdd func : 86 cycles Timer : 103 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 174 cycles
+Performance of the Transpose func : 660 cycles Timer : 682 cycles
+Performance of the MatMul func : 834 cycles Timer : 856 cycles
+Performance of the two MatToVector func : 1694 cycles Timer : 1717 cycles
+Performance of the VectorToMatAdd func : 62 cycles Timer : 85 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 186 cycles
+Performance of the Transpose func : 672 cycles Timer : 700 cycles
+Performance of the MatMul func : 828 cycles Timer : 845 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1728 cycles
+Performance of the VectorToMatAdd func : 80 cycles Timer : 108 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 186 cycles
+Performance of the Transpose func : 666 cycles Timer : 694 cycles
+Performance of the MatMul func : 834 cycles Timer : 851 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1728 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 97 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 174 cycles
+Performance of the Transpose func : 666 cycles Timer : 683 cycles
+Performance of the MatMul func : 822 cycles Timer : 844 cycles
+Performance of the two MatToVector func : 1694 cycles Timer : 1716 cycles
+Performance of the VectorToMatAdd func : 68 cycles Timer : 85 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 666 cycles Timer : 683 cycles
+Performance of the MatMul func : 834 cycles Timer : 862 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1717 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 91 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 174 cycles
+Performance of the Transpose func : 666 cycles Timer : 688 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1694 cycles Timer : 1722 cycles
+Performance of the VectorToMatAdd func : 86 cycles Timer : 108 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 660 cycles Timer : 688 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1723 cycles
+Performance of the VectorToMatAdd func : 80 cycles Timer : 97 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 191 cycles
+Performance of the Transpose func : 666 cycles Timer : 688 cycles
+Performance of the MatMul func : 828 cycles Timer : 845 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1723 cycles
+Performance of the VectorToMatAdd func : 80 cycles Timer : 97 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 660 cycles Timer : 682 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1722 cycles
+Performance of the VectorToMatAdd func : 68 cycles Timer : 85 cycles
+Performance of the MatrixAdd_W_SQRT func : 151 cycles Timer : 168 cycles
+Performance of the Transpose func : 666 cycles Timer : 689 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1728 cycles
+Performance of the VectorToMatAdd func : 86 cycles Timer : 109 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 186 cycles
+Performance of the Transpose func : 654 cycles Timer : 676 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1717 cycles
+Performance of the VectorToMatAdd func : 80 cycles Timer : 97 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 660 cycles Timer : 677 cycles
+Performance of the MatMul func : 822 cycles Timer : 844 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1728 cycles
+Performance of the VectorToMatAdd func : 68 cycles Timer : 91 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 666 cycles Timer : 694 cycles
+Performance of the MatMul func : 822 cycles Timer : 839 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1728 cycles
+Performance of the VectorToMatAdd func : 80 cycles Timer : 97 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 666 cycles Timer : 689 cycles
+Performance of the MatMul func : 816 cycles Timer : 833 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1723 cycles
+Performance of the VectorToMatAdd func : 68 cycles Timer : 85 cycles
+Performance of the MatrixAdd_W_SQRT func : 151 cycles Timer : 168 cycles
+Performance of the Transpose func : 672 cycles Timer : 700 cycles
+Performance of the MatMul func : 834 cycles Timer : 851 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1722 cycles
+Performance of the VectorToMatAdd func : 86 cycles Timer : 114 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 672 cycles Timer : 695 cycles
+Performance of the MatMul func : 822 cycles Timer : 844 cycles
+Performance of the two MatToVector func : 1694 cycles Timer : 1717 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 91 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 666 cycles Timer : 689 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1694 cycles Timer : 1717 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 96 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 666 cycles Timer : 688 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1694 cycles Timer : 1716 cycles
+Performance of the VectorToMatAdd func : 86 cycles Timer : 108 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 185 cycles
+Performance of the Transpose func : 660 cycles Timer : 688 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1694 cycles Timer : 1711 cycles
+Performance of the VectorToMatAdd func : 68 cycles Timer : 85 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 660 cycles Timer : 683 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1728 cycles
+Performance of the VectorToMatAdd func : 80 cycles Timer : 102 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 191 cycles
+Performance of the Transpose func : 666 cycles Timer : 694 cycles
+Performance of the MatMul func : 822 cycles Timer : 844 cycles
+Performance of the two MatToVector func : 1694 cycles Timer : 1716 cycles
+Performance of the VectorToMatAdd func : 80 cycles Timer : 102 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 666 cycles Timer : 694 cycles
+Performance of the MatMul func : 816 cycles Timer : 838 cycles
+Performance of the two MatToVector func : 1694 cycles Timer : 1711 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 91 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 678 cycles Timer : 701 cycles
+Performance of the MatMul func : 822 cycles Timer : 839 cycles
+Performance of the two MatToVector func : 3328 cycles Timer : 3356 cycles
+Performance of the VectorToMatAdd func : 80 cycles Timer : 108 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 660 cycles Timer : 682 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1728 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 91 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 672 cycles Timer : 689 cycles
+Performance of the MatMul func : 822 cycles Timer : 844 cycles
+Performance of the two MatToVector func : 1694 cycles Timer : 1711 cycles
+Performance of the VectorToMatAdd func : 80 cycles Timer : 97 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 666 cycles Timer : 694 cycles
+Performance of the MatMul func : 822 cycles Timer : 844 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1722 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 91 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 174 cycles
+Performance of the Transpose func : 654 cycles Timer : 677 cycles
+Performance of the MatMul func : 822 cycles Timer : 844 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1728 cycles
+Performance of the VectorToMatAdd func : 68 cycles Timer : 90 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 666 cycles Timer : 683 cycles
+Performance of the MatMul func : 822 cycles Timer : 844 cycles
+Performance of the two MatToVector func : 1694 cycles Timer : 1711 cycles
+Performance of the VectorToMatAdd func : 80 cycles Timer : 97 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 191 cycles
+Performance of the Transpose func : 672 cycles Timer : 695 cycles
+Performance of the MatMul func : 834 cycles Timer : 856 cycles
+Performance of the two MatToVector func : 1694 cycles Timer : 1717 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 97 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 186 cycles
+Performance of the Transpose func : 660 cycles Timer : 683 cycles
+Performance of the MatMul func : 834 cycles Timer : 862 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1717 cycles
+Performance of the VectorToMatAdd func : 68 cycles Timer : 85 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 174 cycles
+Performance of the Transpose func : 654 cycles Timer : 676 cycles
+Performance of the MatMul func : 822 cycles Timer : 844 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1728 cycles
+Performance of the VectorToMatAdd func : 80 cycles Timer : 97 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 660 cycles Timer : 688 cycles
+Performance of the MatMul func : 828 cycles Timer : 845 cycles
+Performance of the two MatToVector func : 1694 cycles Timer : 1722 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 91 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 174 cycles
+Performance of the Transpose func : 660 cycles Timer : 683 cycles
+Performance of the MatMul func : 834 cycles Timer : 856 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1723 cycles
+Performance of the VectorToMatAdd func : 86 cycles Timer : 103 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 174 cycles
+Performance of the Transpose func : 666 cycles Timer : 694 cycles
+Performance of the MatMul func : 834 cycles Timer : 862 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1723 cycles
+Performance of the VectorToMatAdd func : 80 cycles Timer : 103 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 678 cycles Timer : 695 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1694 cycles Timer : 1711 cycles
+Performance of the VectorToMatAdd func : 86 cycles Timer : 103 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 660 cycles Timer : 683 cycles
+Performance of the MatMul func : 822 cycles Timer : 844 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1723 cycles
+Performance of the VectorToMatAdd func : 80 cycles Timer : 108 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 191 cycles
+Performance of the Transpose func : 666 cycles Timer : 689 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1717 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 91 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 666 cycles Timer : 689 cycles
+Performance of the MatMul func : 822 cycles Timer : 844 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1717 cycles
+Performance of the VectorToMatAdd func : 80 cycles Timer : 97 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 666 cycles Timer : 683 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1728 cycles
+Performance of the VectorToMatAdd func : 80 cycles Timer : 108 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 666 cycles Timer : 683 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1722 cycles
+Performance of the VectorToMatAdd func : 80 cycles Timer : 97 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 174 cycles
+Performance of the Transpose func : 666 cycles Timer : 683 cycles
+Performance of the MatMul func : 822 cycles Timer : 844 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1723 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 97 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 191 cycles
+Performance of the Transpose func : 666 cycles Timer : 689 cycles
+Performance of the MatMul func : 834 cycles Timer : 862 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1717 cycles
+Performance of the VectorToMatAdd func : 80 cycles Timer : 97 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 174 cycles
+Performance of the Transpose func : 672 cycles Timer : 689 cycles
+Performance of the MatMul func : 822 cycles Timer : 844 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1717 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 91 cycles
+Performance of the MatrixAdd_W_SQRT func : 151 cycles Timer : 168 cycles
+Performance of the Transpose func : 666 cycles Timer : 688 cycles
+Performance of the MatMul func : 822 cycles Timer : 844 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1728 cycles
+Performance of the VectorToMatAdd func : 80 cycles Timer : 102 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 185 cycles
+Performance of the Transpose func : 660 cycles Timer : 688 cycles
+Performance of the MatMul func : 822 cycles Timer : 844 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1728 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 91 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 666 cycles Timer : 688 cycles
+Performance of the MatMul func : 828 cycles Timer : 845 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1717 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 91 cycles
+Performance of the MatrixAdd_W_SQRT func : 151 cycles Timer : 168 cycles
+Performance of the Transpose func : 666 cycles Timer : 694 cycles
+Performance of the MatMul func : 828 cycles Timer : 845 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1723 cycles
+Performance of the VectorToMatAdd func : 62 cycles Timer : 85 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 180 cycles
+Performance of the Transpose func : 660 cycles Timer : 682 cycles
+Performance of the MatMul func : 822 cycles Timer : 844 cycles
+Performance of the two MatToVector func : 1694 cycles Timer : 1717 cycles
+Performance of the VectorToMatAdd func : 80 cycles Timer : 103 cycles
+Performance of the MatrixAdd_W_SQRT func : 151 cycles Timer : 168 cycles
+Performance of the Transpose func : 666 cycles Timer : 689 cycles
+Performance of the MatMul func : 822 cycles Timer : 839 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1722 cycles
+Performance of the VectorToMatAdd func : 86 cycles Timer : 108 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 191 cycles
+Performance of the Transpose func : 666 cycles Timer : 694 cycles
+Performance of the MatMul func : 822 cycles Timer : 844 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1728 cycles
+Performance of the VectorToMatAdd func : 86 cycles Timer : 114 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 174 cycles
+Performance of the Transpose func : 666 cycles Timer : 694 cycles
+Performance of the MatMul func : 822 cycles Timer : 844 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1717 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 91 cycles
+Performance of the MatrixAdd_W_SQRT func : 151 cycles Timer : 168 cycles
+Performance of the Transpose func : 666 cycles Timer : 688 cycles
+Performance of the MatMul func : 834 cycles Timer : 851 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1723 cycles
+Performance of the VectorToMatAdd func : 86 cycles Timer : 109 cycles
+Performance of the MatrixAdd_W_SQRT func : 151 cycles Timer : 168 cycles
+Performance of the Transpose func : 666 cycles Timer : 694 cycles
+Performance of the MatMul func : 828 cycles Timer : 845 cycles
+Performance of the two MatToVector func : 1694 cycles Timer : 1711 cycles
+Performance of the VectorToMatAdd func : 86 cycles Timer : 103 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 672 cycles Timer : 689 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1694 cycles Timer : 1711 cycles
+Performance of the VectorToMatAdd func : 68 cycles Timer : 85 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 174 cycles
+Performance of the Transpose func : 666 cycles Timer : 694 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1694 cycles Timer : 1717 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 97 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 666 cycles Timer : 683 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1717 cycles
+Performance of the VectorToMatAdd func : 86 cycles Timer : 103 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 174 cycles
+Performance of the Transpose func : 654 cycles Timer : 682 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1694 cycles Timer : 1717 cycles
+Performance of the VectorToMatAdd func : 86 cycles Timer : 114 cycles
+Performance of the MatrixAdd_W_SQRT func : 151 cycles Timer : 179 cycles
+Performance of the Transpose func : 666 cycles Timer : 694 cycles
+Performance of the MatMul func : 828 cycles Timer : 845 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1717 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 91 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 666 cycles Timer : 694 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1723 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 97 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 180 cycles
+Performance of the Transpose func : 666 cycles Timer : 689 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1728 cycles
+Performance of the VectorToMatAdd func : 68 cycles Timer : 91 cycles
+Performance of the MatrixAdd_W_SQRT func : 151 cycles Timer : 168 cycles
+Performance of the Transpose func : 666 cycles Timer : 683 cycles
+Performance of the MatMul func : 816 cycles Timer : 838 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1723 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 91 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 666 cycles Timer : 689 cycles
+Performance of the MatMul func : 822 cycles Timer : 844 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1723 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 91 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 191 cycles
+Performance of the Transpose func : 666 cycles Timer : 694 cycles
+Performance of the MatMul func : 816 cycles Timer : 838 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1717 cycles
+Performance of the VectorToMatAdd func : 80 cycles Timer : 97 cycles
+Performance of the MatrixAdd_W_SQRT func : 151 cycles Timer : 168 cycles
+Performance of the Transpose func : 666 cycles Timer : 683 cycles
+Performance of the MatMul func : 834 cycles Timer : 856 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1722 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 91 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 660 cycles Timer : 688 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1728 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 91 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 672 cycles Timer : 689 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1723 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 91 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 174 cycles
+Performance of the Transpose func : 660 cycles Timer : 688 cycles
+Performance of the MatMul func : 822 cycles Timer : 844 cycles
+Performance of the two MatToVector func : 1688 cycles Timer : 1711 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 91 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 666 cycles Timer : 694 cycles
+Performance of the MatMul func : 822 cycles Timer : 844 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1722 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 96 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 179 cycles
+Performance of the Transpose func : 660 cycles Timer : 688 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1694 cycles Timer : 1711 cycles
+Performance of the VectorToMatAdd func : 62 cycles Timer : 79 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 174 cycles
+Performance of the Transpose func : 660 cycles Timer : 683 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1717 cycles
+Performance of the VectorToMatAdd func : 86 cycles Timer : 114 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 186 cycles
+Performance of the Transpose func : 666 cycles Timer : 688 cycles
+Performance of the MatMul func : 822 cycles Timer : 839 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1717 cycles
+Performance of the VectorToMatAdd func : 80 cycles Timer : 97 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 666 cycles Timer : 689 cycles
+Performance of the MatMul func : 816 cycles Timer : 833 cycles
+Performance of the two MatToVector func : 1694 cycles Timer : 1717 cycles
+Performance of the VectorToMatAdd func : 68 cycles Timer : 91 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 174 cycles
+Performance of the Transpose func : 672 cycles Timer : 694 cycles
+Performance of the MatMul func : 2494 cycles Timer : 2522 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1728 cycles
+Performance of the VectorToMatAdd func : 86 cycles Timer : 109 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 666 cycles Timer : 683 cycles
+Performance of the MatMul func : 834 cycles Timer : 856 cycles
+Performance of the two MatToVector func : 1694 cycles Timer : 1711 cycles
+Performance of the VectorToMatAdd func : 68 cycles Timer : 85 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 666 cycles Timer : 683 cycles
+Performance of the MatMul func : 828 cycles Timer : 845 cycles
+Performance of the two MatToVector func : 1694 cycles Timer : 1716 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 102 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 180 cycles
+Performance of the Transpose func : 672 cycles Timer : 700 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1723 cycles
+Performance of the VectorToMatAdd func : 80 cycles Timer : 103 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 174 cycles
+Performance of the Transpose func : 666 cycles Timer : 689 cycles
+Performance of the MatMul func : 822 cycles Timer : 844 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1722 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 91 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 666 cycles Timer : 688 cycles
+Performance of the MatMul func : 822 cycles Timer : 844 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1717 cycles
+Performance of the VectorToMatAdd func : 86 cycles Timer : 114 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 180 cycles
+Performance of the Transpose func : 666 cycles Timer : 688 cycles
+Performance of the MatMul func : 816 cycles Timer : 833 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1722 cycles
+Performance of the VectorToMatAdd func : 86 cycles Timer : 108 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 174 cycles
+Performance of the Transpose func : 660 cycles Timer : 688 cycles
+Performance of the MatMul func : 828 cycles Timer : 845 cycles
+Performance of the two MatToVector func : 1694 cycles Timer : 1716 cycles
+Performance of the VectorToMatAdd func : 68 cycles Timer : 85 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 666 cycles Timer : 683 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1728 cycles
+Performance of the VectorToMatAdd func : 68 cycles Timer : 91 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 174 cycles
+Performance of the Transpose func : 666 cycles Timer : 694 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1694 cycles Timer : 1717 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 97 cycles
+Performance of the MatrixAdd_W_SQRT func : 151 cycles Timer : 168 cycles
+Performance of the Transpose func : 666 cycles Timer : 688 cycles
+Performance of the MatMul func : 834 cycles Timer : 851 cycles
+Performance of the two MatToVector func : 1694 cycles Timer : 1711 cycles
+Performance of the VectorToMatAdd func : 68 cycles Timer : 85 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 191 cycles
+Performance of the Transpose func : 666 cycles Timer : 689 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1688 cycles Timer : 1716 cycles
+Performance of the VectorToMatAdd func : 80 cycles Timer : 97 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 174 cycles
+Performance of the Transpose func : 666 cycles Timer : 688 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1694 cycles Timer : 1717 cycles
+Performance of the VectorToMatAdd func : 68 cycles Timer : 91 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 174 cycles
+Performance of the Transpose func : 672 cycles Timer : 694 cycles
+Performance of the MatMul func : 828 cycles Timer : 845 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1728 cycles
+Performance of the VectorToMatAdd func : 86 cycles Timer : 109 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 174 cycles
+Performance of the Transpose func : 666 cycles Timer : 689 cycles
+Performance of the MatMul func : 828 cycles Timer : 845 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1723 cycles
+Performance of the VectorToMatAdd func : 62 cycles Timer : 79 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 174 cycles
+Performance of the Transpose func : 672 cycles Timer : 689 cycles
+Performance of the MatMul func : 828 cycles Timer : 850 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1728 cycles
+Performance of the VectorToMatAdd func : 68 cycles Timer : 85 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 672 cycles Timer : 700 cycles
+Performance of the MatMul func : 816 cycles Timer : 833 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1717 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 91 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 180 cycles
+Performance of the Transpose func : 660 cycles Timer : 682 cycles
+Performance of the MatMul func : 834 cycles Timer : 856 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1722 cycles
+Performance of the VectorToMatAdd func : 80 cycles Timer : 97 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 174 cycles
+Performance of the Transpose func : 672 cycles Timer : 695 cycles
+Performance of the MatMul func : 816 cycles Timer : 833 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1717 cycles
+Performance of the VectorToMatAdd func : 86 cycles Timer : 114 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 191 cycles
+Performance of the Transpose func : 666 cycles Timer : 688 cycles
+Performance of the MatMul func : 834 cycles Timer : 851 cycles
+Performance of the two MatToVector func : 1694 cycles Timer : 1717 cycles
+Performance of the VectorToMatAdd func : 74 cycles Timer : 97 cycles
+Performance of the MatrixAdd_W_SQRT func : 163 cycles Timer : 186 cycles
+Performance of the Transpose func : 666 cycles Timer : 689 cycles
+Performance of the MatMul func : 828 cycles Timer : 845 cycles
+Performance of the two MatToVector func : 1700 cycles Timer : 1717 cycles
+Performance of the VectorToMatAdd func : 80 cycles Timer : 97 cycles
+Performance of the MatrixAdd_W_SQRT func : 157 cycles Timer : 174 cycles
 Sample 0:	 The lowest cdist= 12.534463	 for codeword 30
 Bye !
-Launching execution with command:
-openocd -d0 -c "gdb_port disabled; telnet_port disabled; tcl_port disabled" -f "/home/miir_ho3ein/projects/pulp/gap9/gap_sdk_private/utils/openocd/tcl/interface/ftdi/olimex-arm-usb-ocd-h.cfg" -f "/home/miir_ho3ein/projects/pulp/gap9/gap_sdk_private/utils/openocd_tools/tcl/gap9revb.tcl" -c "load_and_start_binary /home/miir_ho3ein/projects/pulp/applications/embedded-rvq/vanilla/build/main_vq 0x1c010150"
 [100%] Built target run

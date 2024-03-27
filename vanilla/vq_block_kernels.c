@@ -8,8 +8,8 @@
 
 
 /* Constant Variables */
-#define PERFORMANCE ON 
-// #define VERBOSE ON
+#define PERFORMANCE /* Print the Cycles and Active Cycles */
+// #define VERBOSE  /* Print the intermediate results */
 
 /* Functions */
 
@@ -174,74 +174,98 @@ float32_t cdist(float32_t *SrcA, float32_t *SrcB, int rowSizeSrc, int colSizeSrc
     #endif
     /* Embed Transpose */
     
+    #if defined (PERFORMANCE )
 
         pi_perf_reset(); 
         pi_perf_start();
-
+    #endif
     MatrixTranspose(SrcB, SrcBTransposed, rowSizeSrc, colSizeSrc); /* y = transpose(B) */
         
-    if (verbose == ON )     MatrixPrint(SrcBTransposed, "SrcBTransposed", colSizeSrc, rowSizeSrc);
+     #if defined (VERBOSE )     
+        MatrixPrint(SrcBTransposed, "SrcBTransposed", colSizeSrc, rowSizeSrc); 
+     #endif
+
+    #if defined (PERFORMANCE )
         pi_perf_stop();
         cycles = pi_perf_read(PI_PERF_ACTIVE_CYCLES);
         tim_cycles = pi_perf_read(PI_PERF_CYCLES);
         printf("Performance of the Transpose func : %d cycles Timer : %d cycles\n", cycles, tim_cycles);   
-   
+    #endif
    
    
    
     /* Matrix Multiplications */
+        #if defined (PERFORMANCE )
         pi_perf_conf(1 << PI_PERF_CYCLES | 1 << PI_PERF_ACTIVE_CYCLES);     
         pi_perf_reset(); 
         pi_perf_start();
+        #endif
     matMul(SrcA, SrcBTransposed, Dst, rowSizeSrc, colSizeSrc, rowSizeSrc); /* -2xy */
+        #if defined (PERFORMANCE )
         pi_perf_stop();
         cycles = pi_perf_read(PI_PERF_ACTIVE_CYCLES);
         tim_cycles = pi_perf_read(PI_PERF_CYCLES);
         printf("Performance of the MatMul func : %d cycles Timer : %d cycles\n", cycles, tim_cycles);
-    
-    free(SrcBTransposed);
-    if (verbose == ON )    MatrixPrint(Dst, "MatMul Result", rowSizeSrc, rowSizeSrc);
+        #endif
 
+    free(SrcBTransposed);
+    #if defined (VERBOSE ) 
+         MatrixPrint(Dst, "MatMul Result", rowSizeSrc, rowSizeSrc);
+    #endif
     /* Sum the elements of each row */
-    
+    #if defined (PERFORMANCE )
         pi_perf_reset(); 
         pi_perf_start();
+    #endif
+
     MatToVectorSum(SrcA, xTemp, rowSizeSrc, colSizeSrc); /* reduce(x, 'i d -> i', sum) */
     MatToVectorSum(SrcB, yTemp, rowSizeSrc, colSizeSrc); /* reduce(y, 'i d -> i', sum) */
+    #if defined (PERFORMANCE )
         pi_perf_stop();
         cycles = pi_perf_read(PI_PERF_ACTIVE_CYCLES);
         tim_cycles = pi_perf_read(PI_PERF_CYCLES);
         printf("Performance of the two MatToVector func : %d cycles Timer : %d cycles\n", cycles, tim_cycles);
-
-
-    if (verbose == ON )     VectorPrint(xTemp, "xTemp", rowSizeSrc);
-    if (verbose == ON )     VectorPrint(yTemp, "yTemp", rowSizeSrc);
+    #endif
+        #if defined (VERBOSE ) 
+        VectorPrint(xTemp, "xTemp", rowSizeSrc);
+        VectorPrint(yTemp, "yTemp", rowSizeSrc);
+        #endif 
+    
     /* Add x and y*/
+        #if defined (PERFORMANCE )
         pi_perf_reset(); 
         pi_perf_start();
+        #endif
     VectorToMatrixAdd(xTemp, yTemp, sumResult, rowSizeSrc, rowSizeSrc); /* x + y */
+        #if defined (PERFORMANCE )
         pi_perf_stop();
         cycles = pi_perf_read(PI_PERF_ACTIVE_CYCLES);
         tim_cycles = pi_perf_read(PI_PERF_CYCLES);
         printf("Performance of the VectorToMatAdd func : %d cycles Timer : %d cycles\n", cycles, tim_cycles);
-
+        #endif
 
     free(xTemp);
     free(yTemp);
     
-    if (verbose == ON )     MatrixPrint(sumResult, "SumResult", rowSizeSrc, rowSizeSrc);    
-    
+    #if defined (VERBOSE )     
+    MatrixPrint(sumResult, "SumResult", rowSizeSrc, rowSizeSrc);    
+    #endif
     /* Add the result of matrix multiplication and sum of x and y */
+        #if defined (PERFORMANCE )
         pi_perf_reset(); 
         pi_perf_start();
+        #endif
     MatrixAdd(Dst, sumResult, Dst, rowSizeSrc, rowSizeSrc); /* -2xy + x + y */
+        #if defined (PERFORMANCE )
         pi_perf_stop();
         cycles = pi_perf_read(PI_PERF_ACTIVE_CYCLES);
         tim_cycles = pi_perf_read(PI_PERF_CYCLES);
         printf("Performance of the MatrixAdd_W_SQRT func : %d cycles Timer : %d cycles\n", cycles, tim_cycles);
+        #endif
 
-    if (verbose == ON )     MatrixPrint(Dst, "Result", rowSizeSrc, rowSizeSrc); /* -2xy + x + y */
-    
+    #if defined (VERBOSE )     
+    MatrixPrint(Dst, "Result", rowSizeSrc, rowSizeSrc); /* -2xy + x + y */
+    #endif
     
     return Dst[0]; /* Return the first element of the result matrix */
 }
