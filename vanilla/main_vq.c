@@ -24,29 +24,27 @@ int main(void)
 
     uint32_t errors = 0;
     float32_t *input_data;
-    float32_t *code_word;
     float32_t cdist_current = 0.0f, cdist_next = 0.0f;
     int32_t k_current = 0;
     input_data = (float32_t *) malloc(N_ROW * N_COL * sizeof(float32_t));
-    // code_word = (float32_t *) malloc(N_ROW * N_COL * sizeof(float32_t));
+    
     printf("Main script of the vanilla application\n");
     /* Let's read the first two inputs */
     for (int i = 0; i < 100; i++) /*  Iterate over 100 input samples */
     {   
-                    
-        cdist_current = 2000; // Reset the cdist value for the given input sample
-        // printf("Analysing Input Sample %d\n", i);
+        // Reset the cdist value for the given input sample to a high value since we want to find the minimum.
+        cdist_current = 100000000; 
+  
         for (int k =0 ; k < CODEBOKE_DIM; k++) 
         {        
             for (int j = 0; j < N_ROW * N_COL; j++)  // This is the second dimension of the input and codebook matrix  
             { 
             
                 input_data[j] = input[i][j]; // An unseen input array in the latent space 
-                // code_word[j] = codebook[k][j]; // A codeword from the codebook matrix
-
+   
             }
                             
-            cdist_next = cdist(input_data, &codebook[k][0], N_ROW, N_COL);
+            cdist_next = cdist(input_data, &codebook[k][0], N_ROW, N_COL, OFF);
             // printf("cdist: %f\t for codeword %d\n ", cdist_next, k);
 
             if (cdist_next < cdist_current)

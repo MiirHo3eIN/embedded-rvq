@@ -9,7 +9,9 @@
 [ 82%] Built target dt
 [ 94%] Built target freertos
 [ 95%] Building C object CMakeFiles/main_vq.dir/main_vq.c.obj
-[ 97%] Linking C executable main_vq
+[ 97%] Building C object CMakeFiles/main_vq.dir/vq_block_kernels.c.obj
+[ 98%] Building C object CMakeFiles/main_vq.dir/utils.c.obj
+[100%] Linking C executable main_vq
 [100%] Built target main_vq
 [100%] Built target image
 [100%] Built target flash
@@ -25,7 +27,7 @@ Sample 2:	 The lowest cdist= 11.856223	 for codeword 96
 Sample 3:	 The lowest cdist= 12.836723	 for codeword 12
 Sample 4:	 The lowest cdist= 11.233165	 for codeword 26
 Sample 5:	 The lowest cdist= 11.824022	 for codeword 103
-Sample 6:	 The lowest cdist= 9.956474	 	 for codeword 12
+Sample 6:	 The lowest cdist= 9.956474	 for codeword 12
 Sample 7:	 The lowest cdist= 11.400371	 for codeword 5
 Sample 8:	 The lowest cdist= 12.671700	 for codeword 53
 Sample 9:	 The lowest cdist= 11.807158	 for codeword 124
