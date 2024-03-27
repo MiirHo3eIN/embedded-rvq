@@ -44,7 +44,7 @@ In the ``` python ``` folder, you can find each portion of the code at a high le
 
 This is the one-core simple implementation of the search engine. You can follow the ``` How to Run ``` Section to run it. The ``` vanilla ``` folder is dedicated to the developments of this version.  
 
-**Current Status:** The search engine is implemented and evaluated with simple integer examples. 
+**Current Status:** The VQ module is Finalized. The outcome of this version is the number of the codeword to be considered as the quantized version of the latent space.   
 </br>
 
 **TODO:** The following steps must be done: 
