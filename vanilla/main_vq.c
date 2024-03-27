@@ -30,7 +30,7 @@ int main(void)
     
     printf("Main script of the vanilla application\n");
     /* Let's read the first two inputs */
-    for (int i = 0; i < 100; i++) /*  Iterate over 100 input samples */
+    for (int i = 0; i < 1; i++) /*  Iterate over 100 input samples */
     {   
         // Reset the cdist value for the given input sample to a high value since we want to find the minimum.
         cdist_current = 100000000; 
@@ -43,10 +43,17 @@ int main(void)
                 input_data[j] = input[i][j]; // An unseen input array in the latent space 
    
             }
-                            
+            pi_perf_conf(1 << PI_PERF_CYCLES | 1 << PI_PERF_ACTIVE_CYCLES);   
+            pi_perf_reset(); 
+            pi_perf_start();      
             cdist_next = cdist(input_data, &codebook[k][0], N_ROW, N_COL, OFF);
             // printf("cdist: %f\t for codeword %d\n ", cdist_next, k);
-
+            pi_perf_stop();
+            uint32_t cycles = pi_perf_read(PI_PERF_ACTIVE_CYCLES);
+            uint32_t tim_cycles = pi_perf_read(PI_PERF_CYCLES);
+            printf("Performance of the dist func : %d cycles Timer : %d cycles\n", cycles, tim_cycles);
+            
+    
             if (cdist_next < cdist_current)
             {
                 cdist_current = cdist_next;

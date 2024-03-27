@@ -1,125 +1,186 @@
-[  2%] Built target freertos_printf
-[ 11%] Built target bsp
-[ 42%] Built target pmsis_implem
-[ 47%] Built target ri5cy-gap9
-[ 52%] Built target freertos_libs
-[ 55%] Built target freertos_pmsis_backend
-[ 69%] Built target pmsis_rtos
-[ 79%] Built target freertos_gap9
-[ 82%] Built target dt
-[ 94%] Built target freertos
-[ 95%] Building C object CMakeFiles/main_vq.dir/main_vq.c.obj
-[ 97%] Building C object CMakeFiles/main_vq.dir/vq_block_kernels.c.obj
-[ 98%] Building C object CMakeFiles/main_vq.dir/utils.c.obj
-[100%] Linking C executable main_vq
+[  3%] Built target freertos_printf
+[  7%] Built target bsp
+[ 40%] Built target pmsis_implem
+[ 44%] Built target ri5cy-gap9
+[ 50%] Built target freertos_libs
+[ 53%] Built target freertos_pmsis_backend
+[ 67%] Built target pmsis_rtos
+[ 78%] Built target freertos_gap9
+[ 81%] Built target dt
+[ 93%] Built target freertos
 [100%] Built target main_vq
 [100%] Built target image
+TAP: gap9.riscv
+
+TAP: gap9.pulp
+
+jtag init
+ret1=00000000
+ret2=00000000
+ret1=80007A16
+ret=03
+--------------------------
+begining flash session
+--------------------------
+load flasher to L2 memory
+[Flasher]: MRAM flasher entry
+[Flasher]: MRAM flasher is ready
+Instruct flasher to begin flash per se
+device struct address is 0x1c018540
+going to wait on addr GAP_RDY
+loading image to flash - addr 0x1c01adc8 - copied 32768 / 167440 Bytes - 19.57 %loading image to flash - addr 0x1c012dc8 - copied 65536 / 167440 Bytes - 39.14 %loading image to flash - addr 0x1c00adc8 - copied 98304 / 167440 Bytes - 58.71 %loading image to flash - addr 0x1c002dc8 - copied 131072 / 167440 Bytes - 78.28 %loading image to flash - addr 0x1bffadc8 - copied 163840 / 167440 Bytes - 97.85 %loading image to flash - addr 0x1bff2dc8 - copied 167440 / 167440 Bytes - 100.00 %[Flasher]: flasher is done
+flasher is done, exiting
+--------------------------
+flasher is done!
+--------------------------
+Flashing image with command:
+openocd -c "gdb_port disabled; telnet_port disabled; tcl_port disabled" -f "/home/miir_ho3ein/projects/pulp/gap9/gap_sdk_private/utils/openocd/tcl/interface/ftdi/olimex-arm-usb-ocd-h.cfg" -f "/home/miir_ho3ein/projects/pulp/gap9/gap_sdk_private/utils/openocd_tools/tcl/gap9revb.tcl" -f "/home/miir_ho3ein/projects/pulp/gap9/gap_sdk_private/utils/openocd_tools/tcl/flash_image.tcl" -c "gap9_flash_raw /home/miir_ho3ein/projects/pulp/applications/embedded-rvq/vanilla/build/mram.bin 167440 /home/miir_ho3ein/projects/pulp/gap9/gap_sdk_private/utils/openocd_tools/gap_bins/gap_flasher-gap9_evk-mram.elf 0x8000; exit;"
 [100%] Built target flash
+TAP: gap9.riscv
+
+TAP: gap9.pulp
+
+jtag init
+ret1=00000000
+ret2=00000000
+ret1=80007A16
+ret=03
 
 
 	 *** PMSIS HelloWorld ***
 
 Entering main controller
 Main script of the vanilla application
+Performance of the dist func : 5483 cycles Timer : 5476 cycles
+Performance of the dist func : 5358 cycles Timer : 5381 cycles
+Performance of the dist func : 5280 cycles Timer : 5306 cycles
+Performance of the dist func : 5605 cycles Timer : 5628 cycles
+Performance of the dist func : 5492 cycles Timer : 5518 cycles
+Performance of the dist func : 5431 cycles Timer : 5454 cycles
+Performance of the dist func : 5438 cycles Timer : 5461 cycles
+Performance of the dist func : 5384 cycles Timer : 5407 cycles
+Performance of the dist func : 5437 cycles Timer : 5463 cycles
+Performance of the dist func : 5413 cycles Timer : 5439 cycles
+Performance of the dist func : 5385 cycles Timer : 5408 cycles
+Performance of the dist func : 5409 cycles Timer : 5432 cycles
+Performance of the dist func : 5430 cycles Timer : 5453 cycles
+Performance of the dist func : 5408 cycles Timer : 5434 cycles
+Performance of the dist func : 5407 cycles Timer : 5430 cycles
+Performance of the dist func : 5431 cycles Timer : 5454 cycles
+Performance of the dist func : 5467 cycles Timer : 5490 cycles
+Performance of the dist func : 5442 cycles Timer : 5465 cycles
+Performance of the dist func : 5401 cycles Timer : 5424 cycles
+Performance of the dist func : 5401 cycles Timer : 5424 cycles
+Performance of the dist func : 5400 cycles Timer : 5423 cycles
+Performance of the dist func : 5432 cycles Timer : 5458 cycles
+Performance of the dist func : 5442 cycles Timer : 5465 cycles
+Performance of the dist func : 5406 cycles Timer : 5429 cycles
+Performance of the dist func : 5401 cycles Timer : 5424 cycles
+Performance of the dist func : 5402 cycles Timer : 5425 cycles
+Performance of the dist func : 5418 cycles Timer : 5441 cycles
+Performance of the dist func : 5263 cycles Timer : 5286 cycles
+Performance of the dist func : 5257 cycles Timer : 5280 cycles
+Performance of the dist func : 5273 cycles Timer : 5299 cycles
+Performance of the dist func : 5247 cycles Timer : 5270 cycles
+Performance of the dist func : 5516 cycles Timer : 5542 cycles
+Performance of the dist func : 5472 cycles Timer : 5495 cycles
+Performance of the dist func : 5379 cycles Timer : 5402 cycles
+Performance of the dist func : 5350 cycles Timer : 5373 cycles
+Performance of the dist func : 5379 cycles Timer : 5405 cycles
+Performance of the dist func : 5336 cycles Timer : 5359 cycles
+Performance of the dist func : 5354 cycles Timer : 5377 cycles
+Performance of the dist func : 5343 cycles Timer : 5366 cycles
+Performance of the dist func : 5367 cycles Timer : 5390 cycles
+Performance of the dist func : 5361 cycles Timer : 5384 cycles
+Performance of the dist func : 5338 cycles Timer : 5361 cycles
+Performance of the dist func : 5350 cycles Timer : 5373 cycles
+Performance of the dist func : 5405 cycles Timer : 5428 cycles
+Performance of the dist func : 5387 cycles Timer : 5410 cycles
+Performance of the dist func : 5378 cycles Timer : 5401 cycles
+Performance of the dist func : 5346 cycles Timer : 5372 cycles
+Performance of the dist func : 5336 cycles Timer : 5359 cycles
+Performance of the dist func : 5366 cycles Timer : 5389 cycles
+Performance of the dist func : 5397 cycles Timer : 5420 cycles
+Performance of the dist func : 5393 cycles Timer : 5416 cycles
+Performance of the dist func : 5377 cycles Timer : 5400 cycles
+Performance of the dist func : 5413 cycles Timer : 5436 cycles
+Performance of the dist func : 5390 cycles Timer : 5413 cycles
+Performance of the dist func : 5355 cycles Timer : 5378 cycles
+Performance of the dist func : 5240 cycles Timer : 5266 cycles
+Performance of the dist func : 5190 cycles Timer : 5213 cycles
+Performance of the dist func : 5176 cycles Timer : 5199 cycles
+Performance of the dist func : 5208 cycles Timer : 5234 cycles
+Performance of the dist func : 5487 cycles Timer : 5513 cycles
+Performance of the dist func : 5429 cycles Timer : 5452 cycles
+Performance of the dist func : 5368 cycles Timer : 5391 cycles
+Performance of the dist func : 5332 cycles Timer : 5355 cycles
+Performance of the dist func : 5356 cycles Timer : 5379 cycles
+Performance of the dist func : 5347 cycles Timer : 5373 cycles
+Performance of the dist func : 5342 cycles Timer : 5365 cycles
+Performance of the dist func : 5385 cycles Timer : 5408 cycles
+Performance of the dist func : 5348 cycles Timer : 5371 cycles
+Performance of the dist func : 5355 cycles Timer : 5378 cycles
+Performance of the dist func : 5373 cycles Timer : 5399 cycles
+Performance of the dist func : 5380 cycles Timer : 5403 cycles
+Performance of the dist func : 5349 cycles Timer : 5372 cycles
+Performance of the dist func : 5417 cycles Timer : 5440 cycles
+Performance of the dist func : 5356 cycles Timer : 5379 cycles
+Performance of the dist func : 5379 cycles Timer : 5405 cycles
+Performance of the dist func : 5416 cycles Timer : 5439 cycles
+Performance of the dist func : 5385 cycles Timer : 5408 cycles
+Performance of the dist func : 5377 cycles Timer : 5400 cycles
+Performance of the dist func : 5378 cycles Timer : 5401 cycles
+Performance of the dist func : 5384 cycles Timer : 5407 cycles
+Performance of the dist func : 5381 cycles Timer : 5404 cycles
+Performance of the dist func : 5369 cycles Timer : 5392 cycles
+Performance of the dist func : 5349 cycles Timer : 5375 cycles
+Performance of the dist func : 5229 cycles Timer : 5255 cycles
+Performance of the dist func : 5168 cycles Timer : 5194 cycles
+Performance of the dist func : 5238 cycles Timer : 5261 cycles
+Performance of the dist func : 5200 cycles Timer : 5223 cycles
+Performance of the dist func : 5529 cycles Timer : 5552 cycles
+Performance of the dist func : 5457 cycles Timer : 5480 cycles
+Performance of the dist func : 5355 cycles Timer : 5378 cycles
+Performance of the dist func : 5372 cycles Timer : 5395 cycles
+Performance of the dist func : 5394 cycles Timer : 5417 cycles
+Performance of the dist func : 5397 cycles Timer : 5420 cycles
+Performance of the dist func : 5338 cycles Timer : 5361 cycles
+Performance of the dist func : 5344 cycles Timer : 5370 cycles
+Performance of the dist func : 5349 cycles Timer : 5372 cycles
+Performance of the dist func : 5384 cycles Timer : 5407 cycles
+Performance of the dist func : 5355 cycles Timer : 5378 cycles
+Performance of the dist func : 5384 cycles Timer : 5407 cycles
+Performance of the dist func : 5362 cycles Timer : 5385 cycles
+Performance of the dist func : 5360 cycles Timer : 5383 cycles
+Performance of the dist func : 5395 cycles Timer : 5418 cycles
+Performance of the dist func : 5347 cycles Timer : 5370 cycles
+Performance of the dist func : 5368 cycles Timer : 5391 cycles
+Performance of the dist func : 5362 cycles Timer : 5388 cycles
+Performance of the dist func : 5392 cycles Timer : 5415 cycles
+Performance of the dist func : 5368 cycles Timer : 5391 cycles
+Performance of the dist func : 5362 cycles Timer : 5388 cycles
+Performance of the dist func : 5392 cycles Timer : 5415 cycles
+Performance of the dist func : 5368 cycles Timer : 5391 cycles
+Performance of the dist func : 5362 cycles Timer : 5388 cycles
+Performance of the dist func : 5233 cycles Timer : 5256 cycles
+Performance of the dist func : 5217 cycles Timer : 5240 cycles
+Performance of the dist func : 5194 cycles Timer : 5217 cycles
+Performance of the dist func : 5194 cycles Timer : 5217 cycles
+Performance of the dist func : 5501 cycles Timer : 5524 cycles
+Performance of the dist func : 5418 cycles Timer : 5441 cycles
+Performance of the dist func : 5407 cycles Timer : 5430 cycles
+Performance of the dist func : 5350 cycles Timer : 5373 cycles
+Performance of the dist func : 5379 cycles Timer : 5405 cycles
+Performance of the dist func : 5336 cycles Timer : 5359 cycles
+Performance of the dist func : 5354 cycles Timer : 5377 cycles
+Performance of the dist func : 5343 cycles Timer : 5366 cycles
+Performance of the dist func : 5367 cycles Timer : 5390 cycles
+Performance of the dist func : 5361 cycles Timer : 5384 cycles
+Performance of the dist func : 5338 cycles Timer : 5361 cycles
+Performance of the dist func : 5350 cycles Timer : 5373 cycles
+Performance of the dist func : 5405 cycles Timer : 5428 cycles
 Sample 0:	 The lowest cdist= 12.534463	 for codeword 30
-Sample 1:	 The lowest cdist= 10.954397	 for codeword 111
-Sample 2:	 The lowest cdist= 11.856223	 for codeword 96
-Sample 3:	 The lowest cdist= 12.836723	 for codeword 12
-Sample 4:	 The lowest cdist= 11.233165	 for codeword 26
-Sample 5:	 The lowest cdist= 11.824022	 for codeword 103
-Sample 6:	 The lowest cdist= 9.956474	 for codeword 12
-Sample 7:	 The lowest cdist= 11.400371	 for codeword 5
-Sample 8:	 The lowest cdist= 12.671700	 for codeword 53
-Sample 9:	 The lowest cdist= 11.807158	 for codeword 124
-Sample 10:	 The lowest cdist= 11.777987	 for codeword 83
-Sample 11:	 The lowest cdist= 11.387630	 for codeword 11
-Sample 12:	 The lowest cdist= 12.215476	 for codeword 5
-Sample 13:	 The lowest cdist= 11.510034	 for codeword 55
-Sample 14:	 The lowest cdist= 10.834514	 for codeword 33
-Sample 15:	 The lowest cdist= 12.293641	 for codeword 12
-Sample 16:	 The lowest cdist= 11.930705	 for codeword 32
-Sample 17:	 The lowest cdist= 11.846428	 for codeword 27
-Sample 18:	 The lowest cdist= 11.010230	 for codeword 22
-Sample 19:	 The lowest cdist= 12.929828	 for codeword 74
-Sample 20:	 The lowest cdist= 11.498922	 for codeword 0
-Sample 21:	 The lowest cdist= 11.718112	 for codeword 86
-Sample 22:	 The lowest cdist= 12.978745	 for codeword 98
-Sample 23:	 The lowest cdist= 11.117437	 for codeword 13
-Sample 24:	 The lowest cdist= 11.411687	 for codeword 26
-Sample 25:	 The lowest cdist= 11.934512	 for codeword 121
-Sample 26:	 The lowest cdist= 11.585727	 for codeword 86
-Sample 27:	 The lowest cdist= 12.542452	 for codeword 124
-Sample 28:	 The lowest cdist= 13.157756	 for codeword 13
-Sample 29:	 The lowest cdist= 12.165842	 for codeword 115
-Sample 30:	 The lowest cdist= 12.361286	 for codeword 55
-Sample 31:	 The lowest cdist= 12.084114	 for codeword 27
-Sample 32:	 The lowest cdist= 12.221158	 for codeword 86
-Sample 33:	 The lowest cdist= 11.824566	 for codeword 33
-Sample 34:	 The lowest cdist= 11.894999	 for codeword 21
-Sample 35:	 The lowest cdist= 11.983720	 for codeword 30
-Sample 36:	 The lowest cdist= 11.056502	 for codeword 53
-Sample 37:	 The lowest cdist= 11.411771	 for codeword 13
-Sample 38:	 The lowest cdist= 12.863110	 for codeword 22
-Sample 39:	 The lowest cdist= 12.552430	 for codeword 108
-Sample 40:	 The lowest cdist= 11.597589	 for codeword 100
-Sample 41:	 The lowest cdist= 11.735441	 for codeword 11
-Sample 42:	 The lowest cdist= 12.322068	 for codeword 59
-Sample 43:	 The lowest cdist= 12.193270	 for codeword 74
-Sample 44:	 The lowest cdist= 12.138738	 for codeword 10
-Sample 45:	 The lowest cdist= 12.203340	 for codeword 108
-Sample 46:	 The lowest cdist= 12.614002	 for codeword 93
-Sample 47:	 The lowest cdist= 12.206228	 for codeword 66
-Sample 48:	 The lowest cdist= 11.481408	 for codeword 67
-Sample 49:	 The lowest cdist= 11.689263	 for codeword 28
-Sample 50:	 The lowest cdist= 12.219360	 for codeword 98
-Sample 51:	 The lowest cdist= 11.865827	 for codeword 27
-Sample 52:	 The lowest cdist= 12.483232	 for codeword 83
-Sample 53:	 The lowest cdist= 11.275492	 for codeword 27
-Sample 54:	 The lowest cdist= 11.825430	 for codeword 16
-Sample 55:	 The lowest cdist= 11.963642	 for codeword 45
-Sample 56:	 The lowest cdist= 11.407826	 for codeword 29
-Sample 57:	 The lowest cdist= 11.948172	 for codeword 101
-Sample 58:	 The lowest cdist= 12.533345	 for codeword 13
-Sample 59:	 The lowest cdist= 11.519304	 for codeword 66
-Sample 60:	 The lowest cdist= 12.973862	 for codeword 45
-Sample 61:	 The lowest cdist= 12.573655	 for codeword 29
-Sample 62:	 The lowest cdist= 11.975018	 for codeword 13
-Sample 63:	 The lowest cdist= 11.860281	 for codeword 3
-Sample 64:	 The lowest cdist= 12.196275	 for codeword 57
-Sample 65:	 The lowest cdist= 11.734650	 for codeword 104
-Sample 66:	 The lowest cdist= 12.051443	 for codeword 27
-Sample 67:	 The lowest cdist= 12.696430	 for codeword 52
-Sample 68:	 The lowest cdist= 11.845188	 for codeword 86
-Sample 69:	 The lowest cdist= 12.555399	 for codeword 127
-Sample 70:	 The lowest cdist= 12.162630	 for codeword 121
-Sample 71:	 The lowest cdist= 12.128078	 for codeword 27
-Sample 72:	 The lowest cdist= 11.536044	 for codeword 27
-Sample 73:	 The lowest cdist= 11.302318	 for codeword 111
-Sample 74:	 The lowest cdist= 12.211296	 for codeword 53
-Sample 75:	 The lowest cdist= 12.373731	 for codeword 52
-Sample 76:	 The lowest cdist= 13.149314	 for codeword 87
-Sample 77:	 The lowest cdist= 12.620127	 for codeword 11
-Sample 78:	 The lowest cdist= 13.058787	 for codeword 125
-Sample 79:	 The lowest cdist= 11.461176	 for codeword 17
-Sample 80:	 The lowest cdist= 12.085965	 for codeword 2
-Sample 81:	 The lowest cdist= 11.879655	 for codeword 57
-Sample 82:	 The lowest cdist= 11.770755	 for codeword 13
-Sample 83:	 The lowest cdist= 11.419389	 for codeword 108
-Sample 84:	 The lowest cdist= 11.608943	 for codeword 71
-Sample 85:	 The lowest cdist= 12.088850	 for codeword 40
-Sample 86:	 The lowest cdist= 11.303727	 for codeword 53
-Sample 87:	 The lowest cdist= 11.505466	 for codeword 17
-Sample 88:	 The lowest cdist= 11.557559	 for codeword 21
-Sample 89:	 The lowest cdist= 12.145214	 for codeword 30
-Sample 90:	 The lowest cdist= 11.860216	 for codeword 104
-Sample 91:	 The lowest cdist= 11.911098	 for codeword 20
-Sample 92:	 The lowest cdist= 10.988622	 for codeword 74
-Sample 93:	 The lowest cdist= 11.642709	 for codeword 22
-Sample 94:	 The lowest cdist= 13.035616	 for codeword 64
-Sample 95:	 The lowest cdist= 12.489362	 for codeword 86
-Sample 96:	 The lowest cdist= 11.556314	 for codeword 115
-Sample 97:	 The lowest cdist= 12.801210	 for codeword 59
-Sample 98:	 The lowest cdist= 10.786445	 for codeword 27
-Sample 99:	 The lowest cdist= 11.518725	 for codeword 93
 Bye !
+Launching execution with command:
+openocd -d0 -c "gdb_port disabled; telnet_port disabled; tcl_port disabled" -f "/home/miir_ho3ein/projects/pulp/gap9/gap_sdk_private/utils/openocd/tcl/interface/ftdi/olimex-arm-usb-ocd-h.cfg" -f "/home/miir_ho3ein/projects/pulp/gap9/gap_sdk_private/utils/openocd_tools/tcl/gap9revb.tcl" -c "load_and_start_binary /home/miir_ho3ein/projects/pulp/applications/embedded-rvq/vanilla/build/main_vq 0x1c010150"
 [100%] Built target run
