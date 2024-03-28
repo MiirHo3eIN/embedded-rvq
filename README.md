@@ -58,7 +58,7 @@ Increase the codebook size while keeping seq lenght or increase seq_len while ke
 For accuracy, is it better to have a small rather long rvq, increase layers while keep codeword size small
 
 
-### Code Optimization: 
+### Optimized Version: 
 
 1. Apply some sort of rule on the codebook to have some in-sight on it. 
 2. Use it before parallelization.
