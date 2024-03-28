@@ -47,26 +47,23 @@ This is the one-core simple implementation of the search engine. You can follow 
 **Current Status:** The VQ module is Finalized. The outcome of this version is the number of the codeword to be considered as the quantized version of the latent space.   
 </br>
 
- 
-2. Profiling different sections of the search engine with GAP9 and STM32 devices.
+#### Profiling on GAP9  
+In this section, we provide profiling different sections of the search engine with GAP9 and STM32 devices.
 
-    The result of profiling on GAP9 yields that each run of the ```cdist``` function for an unseen input array and a codeword is **5201** cycles for a codeword with **100** seq_len. However, a massive portion of this is due to read each codeword from FLASH of while MatMul is still the most time consuming task for the ```cdist``` function.
+The result of profiling on GAP9 yields that each run of the ```cdist``` function for an unseen input array and a codeword is **5201** cycles for a codeword with **100** seq_len. However, a massive portion of this is due to read each codeword from FLASH of while MatMul is still the most time consuming task for the ```cdist``` function.
     
     
-    **TODO**: Add numbers to the above sentence and play a bit with the codebook.      
+**TODO**: Add numbers to the above sentence and play a bit with the codebook:      
+Increase the codebook size while keeping seq lenght or increase seq_len while keeping the codebooksize. 
+For accuracy, is it better to have a small rather long rvq, increase layers while keep codeword size small
 
-
-    Increase the codebook size while keeping seq lenght or increase seq_len while keeping the codebooksize. 
-    For accuracy, is it better to have a small rather long rvq, increase layers while keep codeword size small
-
-**TODO:** The following steps must be done:
-3. Apply different scenarios to find the best case for parallelization. 
 
 ### Code Optimization: 
 
 1. Apply some sort of rule on the codebook to have some in-sight on it. 
-2. Use it before parallelization. 
-**TODO:** Read Papers about it :D    
+2. Use it before parallelization.
+
+**TODO:** Read Papers on how to mathematically improve search engine.     
 
 ### Parallel Version: 
 
