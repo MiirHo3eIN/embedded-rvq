@@ -5,15 +5,15 @@
 #include <math.h>
 
 #include "vq_block.h"
-#include "inputs.h"
-#include "codebook.h"
+#include "input_v1.h"
+#include "trained_codebook.h"
 
 
 /* User Defines */
 #define  N_ROW 1
 #define  N_COL 100
 #define  N_CHANNELS 9
-#define CODEBOKE_DIM 128
+#define CODEBOKE_DIM 250
 
 // #define PROFILE 0
 
@@ -92,12 +92,23 @@ int main(void)
 
         cdist_final[i] = cdist_current; 
         codeword_id[i] = k_current; 
-        quantized_val[i]
+        // for (int j = 0; j < N_COL; j++)  // This is the second dimension of the input (a single channel) and codebook matrix
+        // {
+        //     quantized_val[i*N_COL] = (float32_t *)codebook[k_current+j]; // Save the quantized value to export
+
+        // }
 
     } /* Iterate over the channels*/
 
     VectorPrint(cdist_final, "cdist= ", N_CHANNELS); 
     VectorPrint(codeword_id,  "codeword_id= ", N_CHANNELS);
+    for (int i = 0; i < N_CHANNELS; i++)  // This is the second dimension of the input (a single channel) and codebook matrix
+    {
+        // printf("codeword of layer %d = %f\n", i, codeword_id[i]);
+        float32_t temp = 0.0f; 
+        temp = codeword_id[i];
+        MatrixPrint(&codebook[(int32_t)(temp)][0], "quantized_val= ", 1, N_COL);
+    }
     
     printf("Bye !\n");
 
