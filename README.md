@@ -15,7 +15,7 @@ Then, navigate to directory where CMakeLists.txt is and run the following comman
 ``` bash
 cmake -B build 
 cmake --build build --target menuconfig 
-cmake --build build --target run
+cmake --build build --target run >log.txt
 ```
 
 At the second command, you can chose your target [board or GVSOC]. 
