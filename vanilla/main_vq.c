@@ -38,6 +38,8 @@ int main(void)
 
     int32_t k_current = 0;
     
+    FILE *file; // to properly save the output
+
     input_data = (float32_t *) malloc(N_ROW * N_COL * sizeof(float32_t));
     cdist_final = (float32_t *) malloc(N_CHANNELS * sizeof(float32_t));
     codeword_id = (float32_t *) malloc(N_CHANNELS * sizeof(float32_t));
@@ -104,17 +106,14 @@ int main(void)
     VectorPrint(codeword_id,  "codeword_id= ", N_CHANNELS);
     for (int i = 0; i < N_CHANNELS; i++)  // This is the second dimension of the input (a single channel) and codebook matrix
     {
-        // printf("codeword of layer %d = %f\n", i, codeword_id[i]);
         float32_t temp = 0.0f; 
         temp = codeword_id[i];
          // Save the quantized value to export
         for (int j = 0; j < N_COL; j++)
         {
             quantized_val[i*N_COL + j] = codebook[(int32_t)(temp)][j]; // Save the quantized value to export
-            // printf("idx %d = %f\n", j , quantized_val[i*N_COL + j]); // Save the quantized value to export
         }
     }
-    
     // MatrixPrint(&codebook[(int32_t)(temp)][0], "quantized_val= ", 9, N_COL);
     MatrixPrint(quantized_val, "quantized_val= ", N_CHANNELS, N_COL);
     printf("Bye !\n");
