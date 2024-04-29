@@ -8,7 +8,7 @@
 
 
 /* Constant Variables */
-#define PERFORMANCE /* Print the Cycles and Active Cycles */
+// #define PERFORMANCE /* Print the Cycles and Active Cycles */
 // #define VERBOSE  /* Print the intermediate results */
 
 /* Functions */

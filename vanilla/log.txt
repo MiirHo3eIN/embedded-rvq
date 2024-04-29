@@ -1,81 +1,15 @@
-[  1%] Building C object freertos/vendors/gwt/libs/printf/CMakeFiles/freertos_printf.dir/printf.c.obj
-[  2%] Linking C static library libfreertos_printf.a
-[  2%] Built target freertos_printf
-[  4%] Building C object freertos/pmsis/bsp/CMakeFiles/bsp.dir/bsp/bsp.c.obj
-[  5%] Building C object freertos/pmsis/bsp/CMakeFiles/bsp.dir/bsp/boards/bsp_gap9mod_v1_0_b.c.obj
-[  7%] Building C object freertos/pmsis/bsp/CMakeFiles/bsp.dir/bsp/boards/bsp_gap9evk_v1_3.c.obj
-[  8%] Building C object freertos/pmsis/bsp/CMakeFiles/bsp.dir/bsp/powersupply/powersupply.c.obj
-[ 10%] Building C object freertos/pmsis/bsp/CMakeFiles/bsp.dir/bsp/powersupply/powersupplygpio.c.obj
-[ 11%] Linking C static library libbsp.a
-[ 11%] Built target bsp
-[ 13%] Building C object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/chips/gap9/maestro/driver/maestro.c.obj
-[ 14%] Building C object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/chips/gap9/maestro/driver/maestro_irq.c.obj
-[ 16%] Building C object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/chips/gap9/gpio/driver/gpio.c.obj
-[ 17%] Building ASM object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/chips/gap9/gpio/driver/gpio_asm.S.obj
-[ 19%] Building C object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/chips/gap9/efuse/driver/efuse.c.obj
-[ 20%] Building C object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/chips/gap9/fll/driver/fll.c.obj
-[ 22%] Building ASM object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/chips/gap9/cluster/driver/cluster-cc.S.obj
-[ 23%] Building C object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/chips/gap9/cluster/driver/cluster.c.obj
-[ 25%] Building ASM object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/chips/gap9/cluster/driver/cluster-pe-team.S.obj
-[ 26%] Building ASM object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/chips/gap9/cluster/driver/cluster-pe-workgroup.S.obj
-[ 27%] Building C object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/chips/gap9/udma_core/driver/udma_core.c.obj
-[ 29%] Building C object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/malloc/alloc.c.obj
-[ 30%] Building C object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/malloc/alloc_pool.c.obj
-[ 32%] Building C object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/malloc/pi_malloc.c.obj
-[ 33%] Building C object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/chips/gap9/fc_event/driver/fc_event.c.obj
-[ 35%] Building C object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/chips/gap9/pad/driver/pad.c.obj
-[ 36%] Building ASM object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/utils/asm_util.S.obj
-[ 38%] Building C object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/utils/ctors_dtors.c.obj
-[ 39%] Building C object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/chips/gap9/timer/driver/timer.c.obj
-[ 41%] Building ASM object freertos/pmsis/implem/CMakeFiles/pmsis_implem.dir/chips/gap9/timer/driver/timer_asm.S.obj
-[ 42%] Linking C static library libpmsis_implem.a
-[ 42%] Built target pmsis_implem
-[ 44%] Building ASM object freertos/freertos_kernel/portable/GCC/RI5CY-GAP9/CMakeFiles/ri5cy-gap9.dir/port_asm.S.obj
-[ 45%] Building C object freertos/freertos_kernel/portable/GCC/RI5CY-GAP9/CMakeFiles/ri5cy-gap9.dir/port.c.obj
-[ 47%] Linking C static library libri5cy-gap9.a
-[ 47%] Built target ri5cy-gap9
-[ 48%] Building C object freertos/vendors/gwt/libs/CMakeFiles/freertos_libs.dir/src/errno.c.obj
-[ 50%] Building C object freertos/vendors/gwt/libs/CMakeFiles/freertos_libs.dir/src/stdlib.c.obj
-[ 51%] Building C object freertos/vendors/gwt/libs/CMakeFiles/freertos_libs.dir/src/string.c.obj
-[ 52%] Linking C static library libfreertos_libs.a
-[ 52%] Built target freertos_libs
-[ 54%] Building C object freertos/vendors/gwt/pmsis/backend/CMakeFiles/freertos_pmsis_backend.dir/pmsis_backend_native_task_api.c.obj
-[ 55%] Linking C static library libfreertos_pmsis_backend.a
-[ 55%] Built target freertos_pmsis_backend
-[ 57%] Building C object freertos/vendors/gwt/pmsis/rtos/CMakeFiles/pmsis_rtos.dir/malloc/l2_priv_malloc.c.obj
-[ 58%] Building C object freertos/vendors/gwt/pmsis/rtos/CMakeFiles/pmsis_rtos.dir/malloc/l2_malloc.c.obj
-[ 60%] Building C object freertos/vendors/gwt/pmsis/rtos/CMakeFiles/pmsis_rtos.dir/malloc/malloc_internal.c.obj
-[ 61%] Building C object freertos/vendors/gwt/pmsis/rtos/CMakeFiles/pmsis_rtos.dir/malloc/pi_malloc.c.obj
-[ 63%] Building C object freertos/vendors/gwt/pmsis/rtos/CMakeFiles/pmsis_rtos.dir/os/device.c.obj
-[ 64%] Building C object freertos/vendors/gwt/pmsis/rtos/CMakeFiles/pmsis_rtos.dir/os/pmsis_evt.c.obj
-[ 66%] Building C object freertos/vendors/gwt/pmsis/rtos/CMakeFiles/pmsis_rtos.dir/event_kernel/event_kernel.c.obj
-[ 67%] Building C object freertos/vendors/gwt/pmsis/rtos/CMakeFiles/pmsis_rtos.dir/pi_log.c.obj
-[ 69%] Linking C static library libpmsis_rtos.a
-[ 69%] Built target pmsis_rtos
-[ 70%] Building ASM object freertos/vendors/gwt/gap9/CMakeFiles/freertos_gap9.dir/src/device/gap_iet.S.obj
-[ 72%] Building ASM object freertos/vendors/gwt/gap9/CMakeFiles/freertos_gap9.dir/src/device/startup_gap.S.obj
-[ 73%] Building C object freertos/vendors/gwt/gap9/CMakeFiles/freertos_gap9.dir/config/FreeRTOS_util.c.obj
-[ 75%] Building C object freertos/vendors/gwt/gap9/CMakeFiles/freertos_gap9.dir/src/device/gap_it.c.obj
-[ 76%] Building C object freertos/vendors/gwt/gap9/CMakeFiles/freertos_gap9.dir/src/device/system_gap.c.obj
-[ 77%] Building C object freertos/vendors/gwt/gap9/CMakeFiles/freertos_gap9.dir/src/driver/gap_io.c.obj
-[ 79%] Linking C static library libfreertos_gap9.a
-[ 79%] Built target freertos_gap9
-[ 80%] Building C object freertos/CMakeFiles/dt.dir/__/devicetree/include/dt.c.obj
-[ 82%] Linking C static library libdt.a
-[ 82%] Built target dt
-[ 83%] Building C object freertos/CMakeFiles/freertos.dir/freertos_kernel/list.c.obj
-[ 85%] Building C object freertos/CMakeFiles/freertos.dir/freertos_kernel/queue.c.obj
-[ 86%] Building C object freertos/CMakeFiles/freertos.dir/freertos_kernel/tasks.c.obj
-[ 88%] Building ASM object freertos/CMakeFiles/freertos.dir/freertos_kernel/freertos_task.S.obj
-[ 89%] Building C object freertos/CMakeFiles/freertos.dir/freertos_kernel/timers.c.obj
-[ 91%] Building C object freertos/CMakeFiles/freertos.dir/freertos_kernel/event_groups.c.obj
-[ 92%] Building C object freertos/CMakeFiles/freertos.dir/freertos_kernel/stream_buffer.c.obj
-[ 94%] Linking C static library libfreertos.a
-[ 94%] Built target freertos
+[  3%] Built target freertos_printf
+[  7%] Built target bsp
+[ 40%] Built target pmsis_implem
+[ 44%] Built target ri5cy-gap9
+[ 50%] Built target freertos_libs
+[ 53%] Built target freertos_pmsis_backend
+[ 67%] Built target pmsis_rtos
+[ 78%] Built target freertos_gap9
+[ 81%] Built target dt
+[ 93%] Built target freertos
 [ 95%] Building C object CMakeFiles/main_vq.dir/main_vq.c.obj
-[ 97%] Building C object CMakeFiles/main_vq.dir/vq_block_kernels.c.obj
-[ 98%] Building C object CMakeFiles/main_vq.dir/utils.c.obj
-[100%] Linking C executable main_vq
+[ 96%] Linking C executable main_vq
 [100%] Built target main_vq
 [100%] Built target image
 [100%] Built target flash
@@ -85,134 +19,34 @@
 
 Entering main controller
 Main script of the vanilla application
-Performance of the dist func : 5201 cycles Timer : 5228 cycles
-Performance of the dist func : 5207 cycles Timer : 5228 cycles
-Performance of the dist func : 5109 cycles Timer : 5130 cycles
-Performance of the dist func : 5345 cycles Timer : 5372 cycles
-Performance of the dist func : 5310 cycles Timer : 5337 cycles
-Performance of the dist func : 5221 cycles Timer : 5248 cycles
-Performance of the dist func : 5206 cycles Timer : 5233 cycles
-Performance of the dist func : 5239 cycles Timer : 5260 cycles
-Performance of the dist func : 5236 cycles Timer : 5257 cycles
-Performance of the dist func : 5194 cycles Timer : 5209 cycles
-Performance of the dist func : 5232 cycles Timer : 5259 cycles
-Performance of the dist func : 5184 cycles Timer : 5205 cycles
-Performance of the dist func : 5245 cycles Timer : 5266 cycles
-Performance of the dist func : 5171 cycles Timer : 5192 cycles
-Performance of the dist func : 5214 cycles Timer : 5235 cycles
-Performance of the dist func : 5215 cycles Timer : 5236 cycles
-Performance of the dist func : 5204 cycles Timer : 5225 cycles
-Performance of the dist func : 5202 cycles Timer : 5229 cycles
-Performance of the dist func : 5234 cycles Timer : 5255 cycles
-Performance of the dist func : 5159 cycles Timer : 5186 cycles
-Performance of the dist func : 5184 cycles Timer : 5205 cycles
-Performance of the dist func : 5209 cycles Timer : 5230 cycles
-Performance of the dist func : 5220 cycles Timer : 5247 cycles
-Performance of the dist func : 5189 cycles Timer : 5210 cycles
-Performance of the dist func : 5225 cycles Timer : 5252 cycles
-Performance of the dist func : 5208 cycles Timer : 5235 cycles
-Performance of the dist func : 5253 cycles Timer : 5274 cycles
-Performance of the dist func : 5043 cycles Timer : 5070 cycles
-Performance of the dist func : 5018 cycles Timer : 5045 cycles
-Performance of the dist func : 5033 cycles Timer : 5054 cycles
-Performance of the dist func : 5045 cycles Timer : 5066 cycles
-Performance of the dist func : 5418 cycles Timer : 5445 cycles
-Performance of the dist func : 5305 cycles Timer : 5326 cycles
-Performance of the dist func : 5239 cycles Timer : 5260 cycles
-Performance of the dist func : 5257 cycles Timer : 5284 cycles
-Performance of the dist func : 5264 cycles Timer : 5285 cycles
-Performance of the dist func : 5257 cycles Timer : 5284 cycles
-Performance of the dist func : 5343 cycles Timer : 5370 cycles
-Performance of the dist func : 5257 cycles Timer : 5284 cycles
-Performance of the dist func : 5263 cycles Timer : 5290 cycles
-Performance of the dist func : 5226 cycles Timer : 5253 cycles
-Performance of the dist func : 5276 cycles Timer : 5303 cycles
-Performance of the dist func : 5241 cycles Timer : 5268 cycles
-Performance of the dist func : 5219 cycles Timer : 5240 cycles
-Performance of the dist func : 5270 cycles Timer : 5297 cycles
-Performance of the dist func : 5252 cycles Timer : 5279 cycles
-Performance of the dist func : 5241 cycles Timer : 5268 cycles
-Performance of the dist func : 5236 cycles Timer : 5263 cycles
-Performance of the dist func : 5283 cycles Timer : 5304 cycles
-Performance of the dist func : 5276 cycles Timer : 5297 cycles
-Performance of the dist func : 5332 cycles Timer : 5359 cycles
-Performance of the dist func : 5233 cycles Timer : 5254 cycles
-Performance of the dist func : 5307 cycles Timer : 5334 cycles
-Performance of the dist func : 5264 cycles Timer : 5291 cycles
-Performance of the dist func : 5289 cycles Timer : 5316 cycles
-Performance of the dist func : 5111 cycles Timer : 5138 cycles
-Performance of the dist func : 5089 cycles Timer : 5116 cycles
-Performance of the dist func : 5104 cycles Timer : 5125 cycles
-Performance of the dist func : 5120 cycles Timer : 5147 cycles
-Performance of the dist func : 5347 cycles Timer : 5368 cycles
-Performance of the dist func : 5302 cycles Timer : 5329 cycles
-Performance of the dist func : 5218 cycles Timer : 5245 cycles
-Performance of the dist func : 5271 cycles Timer : 5298 cycles
-Performance of the dist func : 5259 cycles Timer : 5280 cycles
-Performance of the dist func : 5231 cycles Timer : 5252 cycles
-Performance of the dist func : 5199 cycles Timer : 5226 cycles
-Performance of the dist func : 5192 cycles Timer : 5219 cycles
-Performance of the dist func : 5205 cycles Timer : 5232 cycles
-Performance of the dist func : 5209 cycles Timer : 5230 cycles
-Performance of the dist func : 5199 cycles Timer : 5220 cycles
-Performance of the dist func : 5239 cycles Timer : 5266 cycles
-Performance of the dist func : 5236 cycles Timer : 5263 cycles
-Performance of the dist func : 5180 cycles Timer : 5201 cycles
-Performance of the dist func : 5184 cycles Timer : 5211 cycles
-Performance of the dist func : 5179 cycles Timer : 5200 cycles
-Performance of the dist func : 5279 cycles Timer : 5300 cycles
-Performance of the dist func : 5280 cycles Timer : 5307 cycles
-Performance of the dist func : 5234 cycles Timer : 5255 cycles
-Performance of the dist func : 5206 cycles Timer : 5227 cycles
-Performance of the dist func : 5217 cycles Timer : 5244 cycles
-Performance of the dist func : 5241 cycles Timer : 5268 cycles
-Performance of the dist func : 5198 cycles Timer : 5219 cycles
-Performance of the dist func : 5154 cycles Timer : 5181 cycles
-Performance of the dist func : 5043 cycles Timer : 5064 cycles
-Performance of the dist func : 4999 cycles Timer : 5026 cycles
-Performance of the dist func : 5040 cycles Timer : 5067 cycles
-Performance of the dist func : 5047 cycles Timer : 5074 cycles
-Performance of the dist func : 5374 cycles Timer : 5401 cycles
-Performance of the dist func : 5281 cycles Timer : 5308 cycles
-Performance of the dist func : 5189 cycles Timer : 5216 cycles
-Performance of the dist func : 5226 cycles Timer : 5253 cycles
-Performance of the dist func : 5209 cycles Timer : 5236 cycles
-Performance of the dist func : 5202 cycles Timer : 5229 cycles
-Performance of the dist func : 5202 cycles Timer : 5229 cycles
-Performance of the dist func : 5202 cycles Timer : 5229 cycles
-Performance of the dist func : 5142 cycles Timer : 5169 cycles
-Performance of the dist func : 5191 cycles Timer : 5212 cycles
-Performance of the dist func : 5171 cycles Timer : 5198 cycles
-Performance of the dist func : 5178 cycles Timer : 5205 cycles
-Performance of the dist func : 5196 cycles Timer : 5217 cycles
-Performance of the dist func : 5261 cycles Timer : 5288 cycles
-Performance of the dist func : 5209 cycles Timer : 5230 cycles
-Performance of the dist func : 5184 cycles Timer : 5199 cycles
-Performance of the dist func : 5182 cycles Timer : 5203 cycles
-Performance of the dist func : 5200 cycles Timer : 5227 cycles
-Performance of the dist func : 5195 cycles Timer : 5222 cycles
-Performance of the dist func : 5251 cycles Timer : 5278 cycles
-Performance of the dist func : 5207 cycles Timer : 5234 cycles
-Performance of the dist func : 5219 cycles Timer : 5240 cycles
-Performance of the dist func : 5172 cycles Timer : 5193 cycles
-Performance of the dist func : 5142 cycles Timer : 5169 cycles
-Performance of the dist func : 5034 cycles Timer : 5055 cycles
-Performance of the dist func : 5062 cycles Timer : 5083 cycles
-Performance of the dist func : 5102 cycles Timer : 5129 cycles
-Performance of the dist func : 5034 cycles Timer : 5055 cycles
-Performance of the dist func : 5364 cycles Timer : 5385 cycles
-Performance of the dist func : 5255 cycles Timer : 5282 cycles
-Performance of the dist func : 5228 cycles Timer : 5249 cycles
-Performance of the dist func : 5182 cycles Timer : 5209 cycles
-Performance of the dist func : 5200 cycles Timer : 5227 cycles
-Performance of the dist func : 5202 cycles Timer : 5217 cycles
-Performance of the dist func : 5201 cycles Timer : 5222 cycles
-Performance of the dist func : 5195 cycles Timer : 5216 cycles
-Performance of the dist func : 5182 cycles Timer : 5203 cycles
-Performance of the dist func : 5189 cycles Timer : 5216 cycles
-Performance of the dist func : 5269 cycles Timer : 5296 cycles
-Performance of the dist func : 5238 cycles Timer : 5259 cycles
-Performance of the dist func : 5189 cycles Timer : 5210 cycles
 Sample 0:	 The lowest cdist= 12.534463	 for codeword 30
+Sample 1:	 The lowest cdist= 10.954397	 for codeword 111
+Sample 2:	 The lowest cdist= 11.856223	 for codeword 96
+Sample 3:	 The lowest cdist= 12.836723	 for codeword 12
+Sample 4:	 The lowest cdist= 11.233165	 for codeword 26
+Sample 5:	 The lowest cdist= 11.824022	 for codeword 103
+Sample 6:	 The lowest cdist= 9.956474	 for codeword 12
+Sample 7:	 The lowest cdist= 11.400371	 for codeword 5
+Sample 8:	 The lowest cdist= 12.671700	 for codeword 53
+Vector cdist=  = 
+12.534463
+10.954397
+11.856223
+12.836723
+11.233165
+11.824022
+9.956474
+11.400371
+12.671700
+Vector codeword_id=  = 
+30.000000
+111.000000
+96.000000
+12.000000
+26.000000
+103.000000
+12.000000
+5.000000
+53.000000
 Bye !
 [100%] Built target run

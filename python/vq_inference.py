@@ -195,9 +195,13 @@ def single_layer_vq_test():
 
     torch.manual_seed(1248)
     # define a float32_t codebook with 128 entries, each of which is 100-dimensional
-    codebook = torch.randn(size = (1, 128, 100), dtype=torch.float32)
+    # codebook = torch.randn(size = (1, 128, 100), dtype=torch.float32)
+    codebook = np.load('trained_cb.npy', allow_pickle=False)
+    codebook = torch.unsqueeze(torch.Tensor(codebook[0, :, :]), 0)
+    print (codebook.size())
+    # exit()
     # define a float32_t input tensor of a 100 batch samples, each of which is 100-dimensional
-    input = torch.randn(size = (100, 1, 100), dtype=torch.float32)
+    input = torch.randn(size = (9, 1, 100), dtype=torch.float32)
     # define a float32_t output tensor of the same size as the input tensor
 
     dist = cdist(input, codebook)
@@ -207,11 +211,11 @@ def single_layer_vq_test():
     # Save dists & inputs
     dists = dist.detach().numpy()
     inputs = input.detach().numpy()
-    codebooks = codebook.detach().numpy()   
+    # codebooks = codebook.detach().numpy()   
 
-    np.save("dists.npy", dists)
-    np.save("inputs.npy", inputs)
-    np.save("codebooks.npy", codebooks)
+    np.save("trained_dists.npy", dists)
+    np.save("inputs_v1.npy", inputs)
+    # np.save("codebooks.npy", codebooks)
 
 if __name__ == "__main__":
     print(f"The selected test is {args.test}\n")

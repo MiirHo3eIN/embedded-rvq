@@ -12,9 +12,15 @@
 /* User Defines */
 #define  N_ROW 1
 #define  N_COL 100
+#define  N_CHANNELS 9
 #define CODEBOKE_DIM 128
 
 // #define PROFILE 0
+
+
+// TODO: Make a function called VQ_block in the following way: 
+// vq_block(float)
+
 
 /* Program Entry. */
 int main(void)
@@ -24,23 +30,35 @@ int main(void)
 
     uint32_t errors = 0;
     float32_t *input_data;
-    float32_t cdist_current = 0.0f, cdist_next = 0.0f;
-    int32_t k_current = 0;
-    input_data = (float32_t *) malloc(N_ROW * N_COL * sizeof(float32_t));
     
+    float32_t cdist_current = 0.0f, cdist_next = 0.0f;
+    float32_t *cdist_final, *codeword_id; 
+
+    float32_t *quantized_val; 
+
+    int32_t k_current = 0;
+    
+    input_data = (float32_t *) malloc(N_ROW * N_COL * sizeof(float32_t));
+    cdist_final = (float32_t *) malloc(N_CHANNELS * sizeof(float32_t));
+    codeword_id = (float32_t *) malloc(N_CHANNELS * sizeof(float32_t));
+    quantized_val = (float32_t *) malloc(N_COL * N_CHANNELS* sizeof(float32_t));
+
+    VectorInit(cdist_final, N_CHANNELS, 0, OFF); 
+    VectorInit(codeword_id, N_CHANNELS, 0, OFF); 
+
     printf("Main script of the vanilla application\n");
     /* Let's read the first two inputs */
-    for (int i = 0; i < 1; i++) /*  Iterate over 100 input samples */
+    for (int i = 0; i < N_CHANNELS; i++) /*  Iterate over number of channels */
     {   
         // Reset the cdist value for the given input sample to a high value since we want to find the minimum.
         cdist_current = 100000000; 
   
         for (int k =0 ; k < CODEBOKE_DIM; k++) 
         {        
-            for (int j = 0; j < N_ROW * N_COL; j++)  // This is the second dimension of the input and codebook matrix  
+            for (int j = 0; j < N_ROW * N_COL; j++)  // This is the second dimension of the input (a single channel) and codebook matrix  
             { 
             
-                input_data[j] = input[i][j]; // An unseen input array in the latent space 
+                input_data[j] = input[i][j]; // An unseen input array in the latent space of a single channel
    
             }
             #if defined (PROFILE) 
@@ -48,7 +66,7 @@ int main(void)
             pi_perf_reset(); 
             pi_perf_start();
             #endif      
-            cdist_next = cdist(input_data, &codebook[k][0], N_ROW, N_COL, OFF);
+            cdist_next = cdist(input_data, &codebook[k][0], N_ROW, N_COL, OFF); // TODO: select the codebook channel in advance
             // printf("cdist: %f\t for codeword %d\n ", cdist_next, k);
             #if defined (PROFILE)   
             pi_perf_stop();
@@ -63,14 +81,24 @@ int main(void)
                 k_current = k;
             }
 
+
             
 
-        }/* Iterate over 100 input samples */
+        }/* Iterate over CODEBOOK */
 
         printf("Sample %d:\t The lowest cdist= %f\t for codeword %d\n", i, cdist_current, k_current);
         
-    }
+        /* Save the current channel to export */
 
+        cdist_final[i] = cdist_current; 
+        codeword_id[i] = k_current; 
+        quantized_val[i]
+
+    } /* Iterate over the channels*/
+
+    VectorPrint(cdist_final, "cdist= ", N_CHANNELS); 
+    VectorPrint(codeword_id,  "codeword_id= ", N_CHANNELS);
+    
     printf("Bye !\n");
 
     return errors;
