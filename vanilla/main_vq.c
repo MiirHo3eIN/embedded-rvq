@@ -107,9 +107,16 @@ int main(void)
         // printf("codeword of layer %d = %f\n", i, codeword_id[i]);
         float32_t temp = 0.0f; 
         temp = codeword_id[i];
-        MatrixPrint(&codebook[(int32_t)(temp)][0], "quantized_val= ", 1, N_COL);
+         // Save the quantized value to export
+        for (int j = 0; j < N_COL; j++)
+        {
+            quantized_val[i*N_COL + j] = codebook[(int32_t)(temp)][j]; // Save the quantized value to export
+            // printf("idx %d = %f\n", j , quantized_val[i*N_COL + j]); // Save the quantized value to export
+        }
     }
     
+    // MatrixPrint(&codebook[(int32_t)(temp)][0], "quantized_val= ", 9, N_COL);
+    MatrixPrint(quantized_val, "quantized_val= ", N_CHANNELS, N_COL);
     printf("Bye !\n");
 
     return errors;
